@@ -5,7 +5,7 @@
 ---
 
 ## 📌 Sobre o Projeto
-Landing page desenvolvida para apresentar os serviços de banho, tosa, tratamentos especializados (como Carding sem dor e hidratação profunda), pacotes mensais e o **Curso Profissional de Estética Animal** ministrado por Lúcio Rosa (com mais de 26 anos de experiência e 12 anos em clínica veterinária).
+Landing page desenvolvida para apresentar os serviços de banho, tosa, tratamentos especializados (como Carding sem dor e hidratação profunda), pacotes mensais e o **Curso Profissional de Estética Animal** ministrado por Lúcio Rosa (com mais de 27 anos de experiência e 12 anos em clínica veterinária).
 
 ## 🎨 Identidade Visual & Design
 - **Paleta de Cores:**
@@ -21,7 +21,7 @@ Landing page desenvolvida para apresentar os serviços de banho, tosa, tratament
 
 ## 🚀 Funcionalidades
 - **Navbar Fixa (Sticky):** com efeito de desfoque ao rolar a página (*scrolled blur*) e botão rápido para WhatsApp.
-- **Hero Section de Alto Impacto:** com métricas de autoridade (26+ anos de experiência, 10+ diplomas, 12 anos em clínica) e chamada para o curso.
+- **Hero Section de Alto Impacto:** com métricas de autoridade (27+ anos de experiência, 10+ diplomas, 12 anos em clínica) e chamada para o curso.
 - **Serviços Especializados:** 6 cards interativos com botões dedicados de agendamento.
 - **Tabela de Preços com Abas:** 5 categorias (Banhos, Tosas, Combos, Tratamentos e Pacotes Mensais) com 19 cards e botões individuais de WhatsApp.
 - **Galeria com Fotos Reais:** 6 fotos de alta resolução de pets reais atendidos no espaço.
