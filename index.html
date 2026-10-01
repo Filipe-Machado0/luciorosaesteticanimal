@@ -1,0 +1,1216 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lúcio Rosa · Estética Animal em Boituva - SP | Desde 2000</title>
+  <meta name="description" content="Centro Estético Animal de Luxo em Boituva - SP. Há 26 anos transformando pelagens com carinho, técnica e excelência. Banho, tosa, hidratação, carding e cursos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --turquoise: #00BFD8;
+      --turquoise-dark: #0099B2;
+      --turquoise-light: #E0F7FA;
+      --orange: #FF6B00;
+      --orange-dark: #E05A00;
+      --orange-light: #FFF3E0;
+      --lime: #8DC63F;
+      --lime-dark: #6FA832;
+      --lime-light: #F1F8E9;
+      --navy: #0D2D3D;
+      --navy-light: #163E52;
+      --text: #2D3748;
+      --text-muted: #718096;
+      --bg-light: #F7FCFD;
+      --white: #FFFFFF;
+      --shadow: 0 10px 30px rgba(0,0,0,0.07);
+      --shadow-hover: 0 20px 45px rgba(0,191,216,0.18);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --transition: all 0.3s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; color: var(--text); background: var(--bg-light); line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 90px 0; }
+    .tc { text-align: center; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: var(--turquoise-light); color: var(--turquoise-dark); font-size: 0.76rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 18px; border-radius: 50px; margin-bottom: 14px; }
+    .badge.orange { background: var(--orange-light); color: var(--orange-dark); }
+    .badge.lime { background: var(--lime-light); color: var(--lime-dark); }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.7rem); color: var(--navy); line-height: 1.25; margin-bottom: 14px; }
+    .section-subtitle { font-size: 1rem; color: var(--text-muted); max-width: 640px; margin: 0 auto 52px; line-height: 1.7; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 14px 28px; border-radius: 50px; font-weight: 700; font-size: 0.94rem; cursor: pointer; border: none; transition: var(--transition); white-space: nowrap; }
+    .btn-lime { background: var(--lime); color: var(--white); box-shadow: 0 6px 20px rgba(141,198,63,0.35); }
+    .btn-lime:hover { background: var(--lime-dark); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(141,198,63,0.5); }
+    .btn-orange { background: var(--orange); color: var(--white); box-shadow: 0 6px 20px rgba(255,107,0,0.35); }
+    .btn-orange:hover { background: var(--orange-dark); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(255,107,0,0.5); }
+    .btn-primary { background: var(--turquoise); color: var(--white); box-shadow: 0 6px 20px rgba(0,191,216,0.35); }
+    .btn-primary:hover { background: var(--turquoise-dark); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,191,216,0.5); }
+    .btn-outline-white { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.7); }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.15); transform: translateY(-3px); }
+    .btn-dark { background: var(--navy); color: var(--white); }
+    .btn-dark:hover { background: #071c26; transform: translateY(-3px); }
+    /* NAVBAR */
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; transition: var(--transition); }
+    .navbar.scrolled { background: rgba(13,45,61,0.98); backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.2); padding: 12px 0; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--turquoise); }
+    .nav-brand-text { color: var(--white); line-height: 1.15; }
+    .nav-brand-text .brand-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #fff; }
+    .nav-brand-text .brand-sub { font-size: 0.7rem; color: var(--turquoise); letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500; padding: 8px 14px; border-radius: 50px; transition: var(--transition); }
+    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.12); }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .btn-wa-nav { background: #25D366; color: #fff; padding: 9px 18px; border-radius: 50px; font-size: 0.86rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); }
+    .btn-wa-nav:hover { background: #1ebe5a; transform: translateY(-2px); box-shadow: 0 4px 16px rgba(37,211,102,0.4); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+    .hamburger span { width: 26px; height: 2.5px; background: #fff; border-radius: 3px; transition: var(--transition); }
+    /* MOBILE MENU OVERLAY */
+    .mobile-nav { display: none; position: fixed; inset: 0; background: var(--navy); z-index: 1100; flex-direction: column; align-items: center; justify-content: center; gap: 24px; padding: 24px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: #fff; font-size: 1.25rem; font-weight: 600; }
+    .mobile-nav a:hover { color: var(--turquoise); }
+    .mobile-close { position: absolute; top: 24px; right: 24px; color: #fff; font-size: 1.8rem; cursor: pointer; }
+    /* HERO */
+    .hero { min-height: 100vh; background: linear-gradient(135deg, #0D2D3D 0%, #0F3D52 45%, #07707E 100%); position: relative; display: flex; align-items: center; overflow: hidden; padding-top: 90px; }
+    .hero::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 90px; background: var(--bg-light); clip-path: ellipse(65% 100% at 50% 100%); }
+    .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 50px; align-items: center; padding: 60px 0 100px; }
+    .hero-content { color: var(--white); }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(141,198,63,0.18); border: 1px solid rgba(141,198,63,0.35); color: #C5E87A; padding: 6px 16px; border-radius: 50px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 22px; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.7rem); line-height: 1.15; margin-bottom: 20px; color: #fff; }
+    .hero-title .highlight { color: var(--lime); }
+    .hero-sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 28px; line-height: 1.75; max-width: 530px; font-weight: 300; }
+    .hero-course-box { background: rgba(255,107,0,0.14); border: 1px solid rgba(255,107,0,0.35); border-left: 4px solid var(--orange); padding: 18px 22px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-bottom: 34px; font-size: 0.92rem; line-height: 1.65; }
+    .hero-course-box strong { color: #FFAA60; display: block; margin-bottom: 4px; font-size: 0.98rem; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 42px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .hero-stat { background: rgba(255,255,255,0.08); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-sm); padding: 16px 10px; text-align: center; }
+    .hero-stat .stat-num { font-size: 1.9rem; font-weight: 800; color: var(--lime); display: block; line-height: 1; }
+    .hero-stat .stat-lbl { font-size: 0.72rem; opacity: 0.8; margin-top: 6px; display: block; }
+    /* HERO VISUAL */
+    .hero-visual { display: flex; justify-content: center; align-items: center; }
+    .hero-logo-box { position: relative; width: 340px; height: 340px; }
+    .hero-logo-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid var(--turquoise); box-shadow: 0 0 60px rgba(0,191,216,0.35), 0 0 0 12px rgba(141,198,63,0.12), 0 0 0 24px rgba(255,107,0,0.08); position: relative; z-index: 1; }
+    .floating-star { position: absolute; width: 40px; height: 40px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.1rem; box-shadow: 0 4px 16px rgba(255,107,0,0.5); z-index: 2; animation: floatY 3s ease-in-out infinite; }
+    .fs-1 { top: -8px; left: 50%; transform: translateX(-50%); }
+    .fs-2 { top: 50%; right: -12px; transform: translateY(-50%); animation-delay: 1s; }
+    .fs-3 { top: 50%; left: -12px; transform: translateY(-50%); animation-delay: 2s; }
+    @keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    /* SERVICES */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .service-card { background: var(--white); border-radius: var(--radius); padding: 36px 28px; box-shadow: var(--shadow); transition: var(--transition); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--turquoise), var(--lime)); }
+    .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+    .service-icon { width: 66px; height: 66px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 20px; }
+    .icon-turquoise { background: var(--turquoise-light); color: var(--turquoise-dark); }
+    .icon-orange { background: var(--orange-light); color: var(--orange); }
+    .icon-lime { background: var(--lime-light); color: var(--lime-dark); }
+    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.18rem; color: var(--navy); margin-bottom: 12px; line-height: 1.35; }
+    .service-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; flex-grow: 1; }
+    .service-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 0.76rem; font-weight: 700; color: var(--turquoise-dark); background: var(--turquoise-light); padding: 6px 14px; border-radius: 50px; align-self: flex-start; }
+    /* PRICING */
+    .pricing-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 44px; }
+    .tab-btn { padding: 12px 24px; border-radius: 50px; border: 2px solid var(--turquoise); background: transparent; color: var(--turquoise-dark); font-family: 'Poppins', sans-serif; font-size: 0.88rem; font-weight: 700; cursor: pointer; transition: var(--transition); }
+    .tab-btn:hover, .tab-btn.active { background: var(--turquoise); color: var(--white); box-shadow: 0 6px 20px rgba(0,191,216,0.35); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: fadeIn 0.35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .price-card { background: var(--white); border-radius: var(--radius); padding: 32px 24px; text-align: center; box-shadow: var(--shadow); transition: var(--transition); position: relative; }
+    .price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .price-card.featured { border: 2px solid var(--turquoise); }
+    .price-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--turquoise); color: #fff; font-size: 0.72rem; font-weight: 800; padding: 4px 16px; border-radius: 50px; white-space: nowrap; }
+    .price-card .size { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 700; margin-bottom: 12px; }
+    .price-card .amount { font-size: 2.3rem; font-weight: 800; color: var(--navy); line-height: 1; margin-bottom: 8px; }
+    .price-card .amount sup { font-size: 1.1rem; font-weight: 700; }
+    .price-card .amount sub { font-size: 0.88rem; color: var(--text-muted); font-weight: 400; }
+    .price-card .desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+    .price-note-box { text-align: center; margin-top: 36px; font-size: 0.9rem; color: var(--text-muted); padding: 18px; background: var(--orange-light); border-radius: var(--radius-sm); border-left: 4px solid var(--orange); }
+    .price-note-box a { color: var(--orange-dark); font-weight: 700; }
+    /* GALLERY */
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .gallery-card { border-radius: var(--radius-sm); overflow: hidden; position: relative; aspect-ratio: 4/3; box-shadow: var(--shadow); }
+    .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .gallery-card:hover img { transform: scale(1.08); }
+    .gallery-caption { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,45,61,0.85) 0%, transparent 60%); opacity: 0; transition: var(--transition); display: flex; align-items: flex-end; padding: 18px; color: #fff; font-size: 0.88rem; font-weight: 600; }
+    .gallery-card:hover .gallery-caption { opacity: 1; }
+    /* PRODUCTS */
+    .products { background: linear-gradient(135deg, #0D2D3D 0%, #163E52 50%, #0D2D3D 100%); color: var(--white); }
+    .products .section-title { color: #fff; }
+    .products-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; }
+    .products-text h3 { font-family: 'Playfair Display', serif; font-size: 1.45rem; line-height: 1.4; margin-bottom: 20px; color: #fff; }
+    .products-text p { font-size: 0.94rem; color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 28px; }
+    .prod-checklist { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+    .prod-item { display: flex; align-items: center; gap: 12px; font-size: 0.92rem; color: rgba(255,255,255,0.9); }
+    .prod-item i { color: var(--lime); font-size: 1.1rem; }
+    .prod-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .prod-feature-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius); padding: 26px 20px; text-align: center; transition: var(--transition); }
+    .prod-feature-card:hover { background: rgba(0,191,216,0.14); border-color: rgba(0,191,216,0.4); transform: translateY(-4px); }
+    .prod-feature-card i { font-size: 2.2rem; color: var(--turquoise); margin-bottom: 14px; display: block; }
+    .prod-feature-card strong { display: block; color: #fff; font-size: 0.94rem; margin-bottom: 6px; }
+    .prod-feature-card span { font-size: 0.8rem; color: rgba(255,255,255,0.7); line-height: 1.5; display: block; }
+    /* COURSE */
+    .course { background: linear-gradient(135deg, var(--orange) 0%, #FF8C00 100%); color: var(--white); position: relative; overflow: hidden; padding: 80px 0; }
+    .course-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; position: relative; z-index: 1; }
+    .course-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.7rem); color: #fff; margin-bottom: 18px; line-height: 1.2; }
+    .course-text p { font-size: 0.98rem; opacity: 0.92; line-height: 1.8; margin-bottom: 28px; }
+    .course-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .course-card-item { background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); border-radius: var(--radius-sm); padding: 18px; display: flex; align-items: flex-start; gap: 12px; font-size: 0.88rem; color: #fff; }
+    .course-card-item i { font-size: 1.2rem; margin-top: 2px; flex-shrink: 0; }
+    /* ABOUT */
+    .about-inner { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 70px; align-items: center; }
+    .about-img-box { position: relative; }
+    .about-photo { width: 100%; height: 500px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .about-tag-badge { position: absolute; bottom: -18px; right: -18px; background: var(--orange); color: #fff; border-radius: var(--radius-sm); padding: 22px 28px; text-align: center; box-shadow: 0 10px 30px rgba(255,107,0,0.4); }
+    .about-tag-badge .big { font-size: 2.3rem; font-weight: 900; line-height: 1; display: block; }
+    .about-tag-badge .small { font-size: 0.74rem; opacity: 0.95; display: block; margin-top: 4px; }
+    .about-text p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 18px; }
+    .about-credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 26px 0; }
+    .cred-item { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 600; color: var(--navy); }
+    .cred-item i { color: var(--turquoise); font-size: 1rem; }
+    /* CTA STRIP */
+    .cta-strip { background: linear-gradient(135deg, var(--lime-dark), var(--lime)); padding: 64px 0; text-align: center; color: #fff; }
+    .cta-strip h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 14px; }
+    .cta-strip p { font-size: 1rem; opacity: 0.92; margin-bottom: 30px; }
+    /* FOOTER */
+    footer { background: var(--navy); color: rgba(255,255,255,0.75); padding: 70px 0 30px; }
+    .footer-top { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; margin-bottom: 48px; align-items: start; }
+    .footer-brand img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 2px solid var(--turquoise); margin-bottom: 18px; }
+    .footer-brand p { font-size: 0.86rem; line-height: 1.7; opacity: 0.8; max-width: 280px; }
+    .social-links { display: flex; gap: 10px; margin-top: 20px; }
+    .social-btn { width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.9rem; transition: var(--transition); }
+    .social-btn:hover { background: var(--turquoise); transform: translateY(-3px); }
+    .footer-col h4 { color: #fff; font-size: 0.92rem; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: 0.86rem; color: rgba(255,255,255,0.7); transition: var(--transition); }
+    .footer-col ul li a:hover { color: var(--turquoise); padding-left: 4px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 0.86rem; color: rgba(255,255,255,0.8); line-height: 1.5; }
+    .contact-item i { color: var(--turquoise); margin-top: 3px; font-size: 1rem; }
+    .footer-map { border-radius: var(--radius-sm); overflow: hidden; margin-top: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    .footer-map iframe { width: 100%; height: 180px; border: none; display: block; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 26px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-size: 0.8rem; opacity: 0.6; }
+    
+    /* Botão WhatsApp dentro dos cards de preço e serviço */
+    .btn-card-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 100%;
+      margin-top: 18px;
+      padding: 11px 16px;
+      border-radius: 50px;
+      background: #25D366;
+      color: #ffffff !important;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 4px 14px rgba(37,211,102,0.3);
+      cursor: pointer;
+    }
+    .btn-card-wa:hover {
+      background: #1ebe5a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37,211,102,0.45);
+      color: #ffffff !important;
+    }
+    .price-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .btn-service-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      margin-top: 20px;
+      padding: 11px 18px;
+      border-radius: 50px;
+      background: rgba(0, 191, 216, 0.1);
+      color: var(--turquoise-dark) !important;
+      border: 1.5px solid var(--turquoise);
+      font-size: 0.86rem;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+    .btn-service-wa:hover {
+      background: var(--turquoise);
+      color: #fff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,191,216,0.35);
+    }
+
+    /* FLOATING WHATSAPP */
+    .floating-whatsapp { position: fixed; bottom: 26px; right: 26px; z-index: 1200; width: 62px; height: 62px; border-radius: 50%; background: #25D366; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; box-shadow: 0 8px 25px rgba(37,211,102,0.55); transition: var(--transition); animation: pulseWa 2.5s infinite; }
+    .floating-whatsapp:hover { transform: scale(1.1); }
+    @keyframes pulseWa { 0%, 100% { box-shadow: 0 8px 25px rgba(37,211,102,0.55); } 50% { box-shadow: 0 8px 45px rgba(37,211,102,0.85), 0 0 0 12px rgba(37,211,102,0.15); } }
+    /* ========================================================
+       REGRAS AVANÇADAS DE RESPONSIVIDADE (MOBILE & DESKTOP)
+       Compatível com telas de 320px (iPhone SE) até 4K (2560px+)
+    ======================================================== */
+    
+    /* Prevenção rigorosa de overflow horizontal */
+    html, body {
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* DESKTOP GRANDE & ULTRA-WIDE (1200px+) */
+    @media (min-width: 1200px) {
+      .container { max-width: 1220px; }
+      .services-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    }
+
+    /* NOTEBOOKS & TABLETS LANDSCAPE (992px a 1199px) */
+    @media (max-width: 1199px) {
+      .hero-inner { gap: 36px; }
+      .hero-logo-box { width: 300px; height: 300px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+      .products-inner { gap: 40px; }
+      .about-inner { gap: 48px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+
+    /* TABLETS PORTRAIT & IPADS (769px a 991px) */
+    @media (max-width: 991px) {
+      .section { padding: 75px 0; }
+      .nav-links a { padding: 6px 10px; font-size: 0.84rem; }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 44px; padding-top: 40px; }
+      .hero-visual { order: -1; }
+      .hero-logo-box { width: 260px; height: 260px; margin: 0 auto; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-course-box { text-align: left; max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 28px; }
+      .hero-btns { justify-content: center; }
+      .hero-stats { max-width: 520px; margin: 0 auto; }
+      .products-inner { grid-template-columns: 1fr; gap: 36px; }
+      .course-inner { grid-template-columns: 1fr; gap: 40px; }
+      .about-inner { grid-template-columns: 1fr; text-align: center; gap: 36px; }
+      .about-credentials { text-align: left; max-width: 500px; margin: 26px auto; }
+      .about-photo { max-height: 420px; width: 100%; object-fit: cover; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+
+    /* SMARTPHONES & MOBILE GERAL (Até 768px) */
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .container { padding: 0 20px; }
+      
+      /* Navegação Mobile com Hamburger */
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .navbar { padding: 12px 0; }
+      .nav-logo img { width: 44px; height: 44px; }
+      .nav-brand-text .brand-name { font-size: 1rem; }
+      .nav-brand-text .brand-sub { font-size: 0.65rem; }
+
+      /* Menu Mobile Drawer com Rolagem Suave */
+      .mobile-nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(13,45,61,0.98);
+        backdrop-filter: blur(14px);
+        z-index: 2000;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 85px 24px 40px;
+        overflow-y: auto;
+        gap: 20px;
+      }
+      .mobile-nav.open { display: flex; }
+      .mobile-nav a {
+        font-size: 1.18rem;
+        font-weight: 600;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: var(--transition);
+      }
+      .mobile-nav a:hover {
+        background: rgba(0,191,216,0.15);
+        color: var(--turquoise);
+      }
+      .mobile-close {
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+        padding: 4px;
+      }
+
+      /* Hero Mobile */
+      .hero { padding-top: 80px; }
+      .hero-title { font-size: clamp(2rem, 6.5vw, 2.8rem); }
+      .hero-logo-box { width: 230px; height: 230px; }
+      .floating-star { width: 34px; height: 34px; font-size: 0.95rem; }
+      
+      /* Serviços em 1 coluna */
+      .services-grid { grid-template-columns: 1fr; gap: 20px; }
+      .service-card { padding: 28px 22px; }
+
+      /* Abas de Preço com Scroll Horizontal Touch */
+      .pricing-tabs {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 6px 4px 14px;
+        gap: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .pricing-tabs::-webkit-scrollbar { display: none; }
+      .tab-btn {
+        flex-shrink: 0;
+        font-size: 0.84rem;
+        padding: 10px 18px;
+        white-space: nowrap;
+      }
+      .pricing-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+      }
+
+      /* Galeria em 2 colunas */
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .gallery-caption {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(13,45,61,0.85) 0%, transparent 80%);
+        font-size: 0.78rem;
+        padding: 12px 10px;
+      }
+
+      /* Produtos e Curso */
+      .prod-cards-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .course-grid { grid-template-columns: 1fr; gap: 12px; }
+
+      /* Sobre o Lúcio: Badge alinhado sem estourar margem */
+      .about-img-box {
+        position: relative;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+      .about-tag-badge {
+        position: static;
+        margin: 16px auto 0;
+        display: inline-block;
+        padding: 16px 24px;
+      }
+
+      /* Rodapé */
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding-bottom: 85px; /* Espaço para o botão flutuante */
+      }
+      
+      /* Botão Flutuante do WhatsApp */
+      .floating-whatsapp {
+        width: 56px;
+        height: 56px;
+        font-size: 1.55rem;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+
+    /* DISPOSITIVOS ULTRA COMPACTOS (320px a 480px - iPhone SE, Galaxy A, etc.) */
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .section { padding: 52px 0; }
+      .section-title { font-size: clamp(1.7rem, 6.5vw, 2.2rem); }
+      .section-subtitle { font-size: 0.92rem; margin-bottom: 34px; }
+      
+      /* Botões em 100% de largura para toque fácil com polegar */
+      .btn {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 0.92rem;
+      }
+      .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+      }
+      .hero-logo-box {
+        width: 190px;
+        height: 190px;
+      }
+      
+      /* Stats do Hero em 3 colunas compactas */
+      .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        width: 100%;
+      }
+      .hero-stat {
+        padding: 12px 6px;
+      }
+      .hero-stat .stat-num {
+        font-size: 1.45rem;
+      }
+      .hero-stat .stat-lbl {
+        font-size: 0.65rem;
+      }
+
+      /* Cards de Preço em 1 coluna */
+      .pricing-grid { grid-template-columns: 1fr; }
+      .price-card { padding: 26px 18px; }
+
+      /* Galeria em 1 coluna para fotos maiores e nítidas */
+      .gallery-grid { grid-template-columns: 1fr; gap: 16px; }
+      .gallery-card { aspect-ratio: 1/1; }
+
+      /* Produtos e Curso */
+      .prod-cards-grid { grid-template-columns: 1fr; }
+      .about-credentials { grid-template-columns: 1fr; gap: 10px; }
+      
+      .cta-strip h2 { font-size: 1.55rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Vim%20pelo%20site%20da%20Est%C3%A9tica%20Animal%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20servi%C3%A7os%20para%20o%20meu%20pet.%20%F0%9F%90%BE" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- MENU MOBILE -->
+<div class="mobile-nav" id="mobileNav">
+  <span class="mobile-close" onclick="closeNav()">&times;</span>
+  <a href="#inicio" onclick="closeNav()">Início</a>
+  <a href="#servicos" onclick="closeNav()">Serviços</a>
+  <a href="#precos" onclick="closeNav()">Preços</a>
+  <a href="#galeria" onclick="closeNav()">Galeria</a>
+  <a href="#produtos" onclick="closeNav()">Produtos</a>
+  <a href="#curso" onclick="closeNav()">Curso</a>
+  <a href="#sobre" onclick="closeNav()">Sobre</a>
+  <a href="#contato" onclick="closeNav()">Contato</a>
+  <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Acessei%20o%20site%20pelo%20celular%20e%20quero%20agendar%20um%20hor%C3%A1rio%20com%20hora%20marcada%20para%20o%20meu%20pet.%20%F0%9F%90%BE" class="btn btn-lime" target="_blank" style="margin-top: 14px;">
+    <i class="fab fa-whatsapp"></i> Agendar Horário
+  </a>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#inicio" class="nav-logo">
+      <img src="images/logo.jpg" alt="Lúcio Rosa Estética Animal">
+      <div class="nav-brand-text">
+        <div class="brand-name">Lúcio Rosa</div>
+        <div class="brand-sub">Estética Animal · Desde 2000</div>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#precos">Preços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#curso">Curso</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </div>
+
+    <div class="nav-cta">
+      <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20o%20meu%20pet.%20Pode%20me%20passar%20os%20hor%C3%A1rios%20dispon%C3%ADveis%3F%20%F0%9F%97%93%EF%B8%8F" class="btn-wa-nav" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+
+    <div class="hamburger" onclick="openNav()" aria-label="Abrir Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero" id="inicio">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <i class="fas fa-star"></i> Desde 2000 · Boituva - SP · Centro Estético de Luxo
+      </div>
+      <h1 class="hero-title">
+        Há <span class="highlight">26 anos</span> trabalhando com o que amo.
+      </h1>
+      <p class="hero-sub">
+        Estética de alto padrão, acabamento impecável e especialista em transformações de pelagem. O cuidado e o luxo que seu melhor amigo merece.
+      </p>
+
+      <div class="hero-course-box">
+        <strong>🎓 E agora: Formando novos profissionais</strong>
+        Curso de Estética Animal em Boituva — do iniciante ao profissional ao avançado. Aprenda diretamente na prática com quem tem mais de 26 anos de mercado!
+      </div>
+
+      <div class="hero-btns">
+        <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Vi%20seu%20site%20e%20gostaria%20de%20agendar%20um%20atendimento%20de%20luxo%20para%20o%20meu%20pet.%20Ra%C3%A7a/Porte%3A%20%5B%20%20%20%5D.%20Qual%20o%20pr%C3%B3ximo%20hor%C3%A1rio%20vago%3F%20%E2%9C%82%EF%B8%8F" class="btn btn-lime" target="_blank" rel="noopener">
+          <i class="fas fa-calendar-check"></i> Agendar um horário
+        </a>
+        <a href="#curso" class="btn btn-orange">
+          <i class="fas fa-graduation-cap"></i> Quero fazer o curso
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-num">26+</span>
+          <span class="stat-lbl">Anos de Experiência</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-num">10+</span>
+          <span class="stat-lbl">Diplomas e Certificações</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-num">12</span>
+          <span class="stat-lbl">Anos em Clínica Vet.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-logo-box">
+        <img src="images/logo.jpg" alt="Lúcio Rosa Estética Animal - Desde 2000">
+        <div class="floating-star fs-1"><i class="fas fa-star"></i></div>
+        <div class="floating-star fs-2"><i class="fas fa-scissors"></i></div>
+        <div class="floating-star fs-3"><i class="fas fa-heart"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO SERVIÇOS -->
+<section class="section" id="servicos" style="background: var(--bg-light);">
+  <div class="container">
+    <div class="tc">
+      <span class="badge">Nossos Serviços</span>
+      <h2 class="section-title">O Cuidado e o Luxo que Seu Pet Merece</h2>
+      <p class="section-subtitle">
+        Atendimento exclusivo com hora marcada, sem gaiolas e sem estresse. Cada procedimento é realizado com técnica apurada, produtos de alta qualidade e carinho incomparável.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Card 1 -->
+      <div class="service-card">
+        <div class="service-icon icon-turquoise">
+          <i class="fas fa-bath"></i>
+        </div>
+        <span class="badge lime" style="margin-bottom: 12px;">SPA Completo</span>
+        <h3>Banho Premium & Relaxante — SPA Pet</h3>
+        <p>Um verdadeiro ritual de bem-estar com produtos nobres e hipoalergênicos. Inclui limpeza minuciosa de ouvidos, corte e lixamento de unhas e tosa higiênica. Seu companheiro sai perfumado, macio e extremamente relaxado.</p>
+        <span class="service-tag"><i class="fas fa-check-circle"></i> Ouvidos + Unhas + Higiênica inclusos</span>
+        <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20o%20Banho%20Premium%20%26%20Relaxante%20SPA%20Pet%20para%20o%20meu%20companheiro.%20Quais%20hor%C3%A1rios%20voc%C3%AA%20tem%20dispon%C3%ADveis%3F%20%F0%9F%9B%81%F0%9F%90%BE" class="btn-service-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Banho SPA</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card">
+        <div class="service-icon icon-orange">
+          <i class="fas fa-cut"></i>
+        </div>
+        <span class="badge orange" style="margin-bottom: 12px;">Arte & Precisão</span>
+        <h3>Tosas Especializadas</h3>
+        <p>Tosa Bebê fofa e bem delineada, Tosa Higiênica funcional e Tosa Oficial da Raça com tesouras profissionais. Respeitamos as linhas anatômicas de cada cão, garantindo simetria, elegância e acabamento impecável.</p>
+        <span class="service-tag"><i class="fas fa-paw"></i> Bebê · Higiênica · Padrão da Raça</span>
+        <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20uma%20Tosa%20Especializada%20%28Beb%C3%AA%20/%20da%20Ra%C3%A7a%29%20para%20o%20meu%20pet.%20Quando%20podemos%20marcar%3F%20%E2%9C%82%EF%B8%8F%F0%9F%90%BE" class="btn-service-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Tosa Especializada</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card">
+        <div class="service-icon icon-lime">
+          <i class="fas fa-spa"></i>
+        </div>
+        <span class="badge" style="margin-bottom: 12px;">Saúde do Fio</span>
+        <h3>Hidratação & Cronograma de Pelagem</h3>
+        <p>Tratamentos profundos de reestruturação com máscaras ricas em aminoácidos, óleos vegetais e vitaminas. Criamos um cronograma personalizado para recuperar a elasticidade, sedosidade e brilho intenso da pelagem.</p>
+        <span class="service-tag"><i class="fas fa-tint"></i> Recuperação e brilho duradouro</span>
+        <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20uma%20Hidrata%C3%A7%C3%A3o%20%26%20Cronograma%20de%20Pelagem%20para%20recuperar%20os%20pelos%20do%20meu%20pet.%20%E2%9C%A8%F0%9F%90%BE" class="btn-service-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Hidratação</a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="service-card">
+        <div class="service-icon icon-turquoise">
+          <i class="fas fa-feather-alt"></i>
+        </div>
+        <span class="badge lime" style="margin-bottom: 12px;">Especialidade</span>
+        <h3>Carding — Remoção de Pelos Mortos</h3>
+        <p>Especialidade exclusiva realizada 100% sem dor! Técnica manual precisa para retirada de subpelos mortos em raças de pelagem dupla (Spitz, Golden, Chow-chow, etc.), desobstruindo a pele e diminuindo a queda em casa.</p>
+        <span class="service-tag"><i class="fas fa-star"></i> Técnica sem dor e refrescante</span>
+        <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20o%20tratamento%20de%20Carding%20sem%20dor%20%28remo%C3%A7%C3%A3o%20de%20pelos%20mortos%29%20para%20o%20meu%20pet.%20Quando%20tem%20vaga%3F%20%E2%AD%90%F0%9F%90%BE" class="btn-service-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Carding Sem Dor</a>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="service-card">
+        <div class="service-icon icon-orange">
+          <i class="fas fa-calendar-check"></i>
+        </div>
+        <span class="badge orange" style="margin-bottom: 12px;">Mais Praticidade</span>
+        <h3>Pacotes Mensais Premium</h3>
+        <p>Planos contínuos pensados para quem valoriza seu pet sempre limpo e cheiroso. Condições especiais com garantia de horário semanal fixo, hidratações inclusas e prioridade nos agendamentos de fim de ano.</p>
+        <span class="service-tag"><i class="fas fa-gem"></i> Economia e vaga garantida</span>
+        <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20conhecer%20e%20contratar%20um%20Pacote%20Mensal%20de%20banhos%20com%20dia%20e%20hor%C3%A1rio%20fixo%20garantido.%20%F0%9F%93%A6%F0%9F%90%BE" class="btn-service-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar Pacotes Mensais</a>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="service-card">
+        <div class="service-icon icon-lime">
+          <i class="fas fa-user-shield"></i>
+        </div>
+        <span class="badge" style="margin-bottom: 12px;">Bem-Estar Total</span>
+        <h3>Hora Marcada & Parceria Veterinária</h3>
+        <p>Atendimento calmo, individualizado e sem gaiolas. Com mais de 12 anos de atuação em clínicas veterinárias, Lúcio Rosa monitora o estado físico e comportamental do animal com máxima segurança e respaldo profissional.</p>
+        <span class="service-tag"><i class="fas fa-heart"></i> Sem gaiolas · Sem estresse</span>
+        <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20um%20atendimento%20individualizado%20com%20hora%20marcada%20e%20sem%20estresse%20para%20meu%20pet.%20%F0%9F%97%93%EF%B8%8F%F0%9F%90%BE" class="btn-service-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar com Hora Marcada</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABELA DE PREÇOS / ABAS -->
+<section class="section" id="precos" style="background: #FFFFFF;">
+  <div class="container">
+    <div class="tc">
+      <span class="badge orange">Tabela de Serviços</span>
+      <h2 class="section-title">Valores e Planos de Estética</h2>
+      <p class="section-subtitle">
+        Os valores variam conforme o porte do animal, densidade e condição atual da pelagem. Escolha a categoria abaixo e consulte o valor exato via WhatsApp com o Lúcio.
+      </p>
+    </div>
+
+    <!-- BOTOES DAS ABAS -->
+    <div class="pricing-tabs">
+      <button class="tab-btn active" onclick="openTab(event, 'tab-banhos')"><i class="fas fa-bath"></i> Banhos</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab-tosas')"><i class="fas fa-scissors"></i> Tosas</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab-combos')"><i class="fas fa-star"></i> Banho + Tosa</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab-tratamentos')"><i class="fas fa-magic"></i> Tratamentos & Extras</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab-mensais')"><i class="fas fa-box-open"></i> Pacotes Mensais</button>
+    </div>
+
+    <!-- CONTEUDO ABA 1: BANHOS -->
+    <div id="tab-banhos" class="tab-panel active">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="size">Porte Pequeno</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">Até 6kg (ex: Shih-tzu, Maltês, Pinscher, Yorkshire). Inclui limpeza de ouvidos, corte de unhas e tosa higiênica.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20um%20Banho%20Premium%20para%20meu%20c%C3%A3o%20de%20Porte%20Pequeno%20%28at%C3%A9%206kg%29.%20Quais%20os%20hor%C3%A1rios%20dispon%C3%ADveis%3F%20%F0%9F%9B%81%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Banho Pequeno</a>
+</div>
+        <div class="price-card featured">
+          <div class="price-badge">Mais Pedido ⭐</div>
+          <div class="size">Porte Médio</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">De 6kg a 15kg (ex: Beagle, Cocker, Buldogue Francês, Spitz). Higienização profunda, limpeza de ouvidos e corte de unhas.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20um%20Banho%20Premium%20para%20meu%20c%C3%A3o%20de%20Porte%20M%C3%A9dio%20%286kg%20a%2015kg%29.%20Quais%20os%20hor%C3%A1rios%20dispon%C3%ADveis%3F%20%F0%9F%9B%81%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Banho Médio</a>
+</div>
+        <div class="price-card">
+          <div class="size">Porte Grande</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">De 15kg a 30kg (ex: Golden Retriever, Labrador, Border Collie). Secagem técnica e desodorização completa.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20um%20Banho%20Premium%20para%20meu%20c%C3%A3o%20de%20Porte%20Grande%20%2815kg%20a%2030kg%29.%20Quais%20os%20hor%C3%A1rios%20dispon%C3%ADveis%3F%20%F0%9F%9B%81%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Banho Grande</a>
+</div>
+        <div class="price-card">
+          <div class="size">Porte Gigante</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">Acima de 30kg (ex: Bernese, Rottweiler, Pastor Alemão). Tratamento intensivo anti-umidade.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20um%20Banho%20Premium%20para%20meu%20c%C3%A3o%20de%20Porte%20Gigante%20%28acima%20de%2030kg%29.%20Quais%20os%20hor%C3%A1rios%20dispon%C3%ADveis%3F%20%F0%9F%9B%81%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Banho Gigante</a>
+</div>
+      </div>
+    </div>
+
+    <!-- CONTEUDO ABA 2: TOSAS -->
+    <div id="tab-tosas" class="tab-panel">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="size">Tosa Higiênica</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">Almofadas das patinhas, barriga e região íntima. Máximo conforto e prevenção de nós e sujidades.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20uma%20Tosa%20Higi%C3%AAnica%20para%20o%20meu%20pet.%20Quando%20voc%C3%AA%20tem%20hor%C3%A1rio%20dispon%C3%ADvel%3F%20%E2%9C%82%EF%B8%8F%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Tosa Higiênica</a>
+</div>
+        <div class="price-card featured">
+          <div class="price-badge">Destaque ⭐</div>
+          <div class="size">Tosa Bebê (Tesoura)</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">Corte artístico tesourado, rostinho arredondado e acabamento macio. O queridinho dos tutores de Spitz e Shih-tzu!</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20uma%20Tosa%20Beb%C3%AA%20art%C3%ADstica%20na%20tesoura%20para%20o%20meu%20pet.%20Quando%20voc%C3%AA%20tem%20hor%C3%A1rio%3F%20%E2%9C%82%EF%B8%8F%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Tosa Bebê</a>
+</div>
+        <div class="price-card">
+          <div class="size">Tosa da Raça</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">Padrão oficial da raça com tesoura e máquina (Schnauzer, Cocker, Poodle). Acabamento simétrico de pista.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20uma%20Tosa%20Oficial%20da%20Ra%C3%A7a%20para%20o%20meu%20pet.%20Quando%20voc%C3%AA%20tem%20hor%C3%A1rio%3F%20%F0%9F%8F%86%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Tosa da Raça</a>
+</div>
+        <div class="price-card">
+          <div class="size">Tosa Geral Máquina</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">Tosa prática e segura, com lâminas especiais que não irritam a pele. Ideal para refrescar com saúde.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20uma%20Tosa%20Geral%20na%20m%C3%A1quina%20para%20o%20meu%20pet.%20Quando%20voc%C3%AA%20tem%20hor%C3%A1rio%3F%20%E2%9C%82%EF%B8%8F%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Tosa Geral</a>
+</div>
+      </div>
+    </div>
+
+    <!-- CONTEUDO ABA 3: COMBOS -->
+    <div id="tab-combos" class="tab-panel">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="size">Combo Banho + Higiênica</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">Banho completo nobre + tosa higiênica + limpeza de ouvidos + unhas cortadas e lixadas.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Quero%20agendar%20o%20Combo%20Banho%20%2B%20Tosa%20Higi%C3%AAnica%20para%20o%20meu%20pet.%20Como%20podemos%20agendar%3F%20%E2%AD%90%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Banho + Higiênica</a>
+</div>
+        <div class="price-card featured">
+          <div class="price-badge">Melhor Escolha ⭐</div>
+          <div class="size">Combo Banho + Tosa Bebê</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">Banho SPA + hidratação leve + estilização bebêê completa na tesoura. Visual impecável e fofo.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Quero%20agendar%20o%20Combo%20Banho%20%2B%20Tosa%20Beb%C3%AA%20completa%20para%20o%20meu%20pet.%20Como%20podemos%20agendar%3F%20%E2%AD%90%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Banho + Tosa Bebê</a>
+</div>
+        <div class="price-card">
+          <div class="size">Combo Médio Completo</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">Banho premium + tosa da raça para cães médios. Acabamento simétrico e perfume duradouro.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Quero%20agendar%20o%20Combo%20Completo%20%28Banho%20%2B%20Tosa%29%20para%20pet%20de%20Porte%20M%C3%A9dio.%20Como%20podemos%20agendar%3F%20%E2%AD%90%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Combo Médio</a>
+</div>
+        <div class="price-card">
+          <div class="size">Combo Grande da Raça</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">Tratamento completo para cães grandes exigentes. Banho profundo, escovação e tosa personalizada.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Quero%20agendar%20o%20Combo%20Completo%20%28Banho%20%2B%20Tosa%20da%20Ra%C3%A7a%29%20para%20pet%20de%20Porte%20Grande.%20Como%20podemos%20agendar%3F%20%E2%AD%90%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Combo Grande</a>
+</div>
+      </div>
+    </div>
+
+    <!-- CONTEUDO ABA 4: TRATAMENTOS -->
+    <div id="tab-tratamentos" class="tab-panel">
+      <div class="pricing-grid">
+        <div class="price-card featured">
+          <div class="price-badge">Sem Dor ⭐</div>
+          <div class="size">Carding Técnico</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">Remoção profissional de subpelo sem dor. Diminui em até 80% os pelos caídos pela casa e areja a pele.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20o%20tratamento%20de%20Carding%20%28remo%C3%A7%C3%A3o%20de%20pelos%20mortos%20sem%20dor%29%20para%20o%20meu%20pet.%20Como%20funciona%3F%20%E2%9C%A8%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Carding Sem Dor</a>
+</div>
+        <div class="price-card">
+          <div class="size">Hidratação com Queratina</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">Reposição profunda de nutrientes, devolvendo maciez e brilho espetacular aos fios danificados.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20uma%20Hidrata%C3%A7%C3%A3o%20Profunda%20com%20Queratina%20para%20recuperar%20a%20pelagem%20do%20meu%20pet.%20%F0%9F%92%A7%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Hidratação</a>
+</div>
+        <div class="price-card">
+          <div class="size">Cauterização de Pelagem</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">Blindagem contra umidade e prevenção ativa contra a formação de nós indesejados.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20agendar%20uma%20Cauteriza%C3%A7%C3%A3o%20/%20Blindagem%20de%20Pelagem%20para%20o%20meu%20pet.%20%F0%9F%9B%A1%EF%B8%8F%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Cauterização</a>
+</div>
+        <div class="price-card">
+          <div class="size">Escovação Dental Anti-Tártaro</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">Higiene bucal com pasta enzimática aprovada por veterinários para hálito fresco e saúde gengival.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20incluir%20a%20Escova%C3%A7%C3%A3o%20Dental%20anti-t%C3%A1rtaro%20no%20atendimento%20do%20meu%20pet.%20%F0%9F%A6%B7%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Escovação Dental</a>
+</div>
+      </div>
+    </div>
+
+    <!-- CONTEUDO ABA 5: PACOTES -->
+    <div id="tab-mensais" class="tab-panel">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="size">Pacote Quinzenal</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">2 banhos mensais completos com ouvidos, unhas e tosa higiênica. Para manter o pet sempre cheiroso.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Tenho%20interesse%20no%20Pacote%20Quinzenal%20%282%20banhos%20por%20m%C3%AAs%29.%20Pode%20me%20passar%20mais%20detalhes%20e%20valores%3F%20%F0%9F%93%A6%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Quero Pacote Quinzenal</a>
+</div>
+        <div class="price-card featured">
+          <div class="price-badge">Mais Econômico ⭐</div>
+          <div class="size">Pacote Semanal Pet Lover</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">4 banhos mensais + 1 hidratação profunda inclusa + tosa higiênica quinzenal + dia e horário semanal fixo.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Tenho%20interesse%20no%20Pacote%20Semanal%20Pet%20Lover%20%284%20banhos%20%2B%20hidrata%C3%A7%C3%A3o%29.%20Pode%20me%20passar%20mais%20detalhes%20e%20valores%3F%20%F0%9F%93%A6%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Quero Pacote Semanal</a>
+</div>
+        <div class="price-card">
+          <div class="size">Pacote VIP Master</div>
+          <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
+          <p class="desc">4 banhos premium + 1 tosa completa no mês + cronograma de hidratação + tratamento carding incluso.</p>
+        
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Tenho%20interesse%20no%20Pacote%20VIP%20Master%20Completo%20para%20o%20meu%20pet.%20Como%20fa%C3%A7o%20para%20assinar%3F%20%F0%9F%91%91%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Quero Pacote VIP Master</a>
+</div>
+      </div>
+    </div>
+
+    <div class="price-note-box">
+      💬 <strong>Valores sob consulta individual:</strong> cada pet possui tipo, densidade e comprimento de pelagem únicos.
+      <br>
+      <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20consultar%20os%20valores%20e%20agendar%20para%20o%20meu%20pet.%20Ra%C3%A7a/Porte%3A%20%5B%20%20%20%5D%20%7C%20Servi%C3%A7o%20de%20interesse%3A%20%5B%20%20%20%5D%20%F0%9F%90%95" target="_blank" rel="noopener">
+        Clique aqui para consultar os valores exatos para o seu companheiro no WhatsApp! 🐾
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA DE FOTOS REAIS -->
+<section class="section" id="galeria" style="background: var(--bg-light);">
+  <div class="container">
+    <div class="tc">
+      <span class="badge lime">Galeria dos Companheiros</span>
+      <h2 class="section-title">Patinhas que Já Passaram por Aqui</h2>
+      <p class="section-subtitle">
+        Fotos reais de clientes atendidos com carinho, paciência e acabamento impecável pelo Lúcio Rosa em Boituva - SP.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="images/pet1.jpg" alt="Shih-tzu com tosa bebêê impecável e cachecol de inverno" loading="lazy">
+        <div class="gallery-caption">🐾 Shih-tzu: tosa bebêê artística e pelagem macia</div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="images/pet2.jpg" alt="Spitz Alemão com tiara de princesa e bandanas" loading="lazy">
+        <div class="gallery-caption">👑 Penteado nobre com tiara e acabamento VIP</div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="images/pet3.jpg" alt="Spitz Alemão com tosa e gravata no fundo oficial Lúcio Rosa Desde 2000" loading="lazy">
+        <div class="gallery-caption">✂️ Especialista em pelagem dupla e tosa na tesoura</div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="images/pet4.png" alt="Cão branco de pelagem brilhante e gravata estilizada" loading="lazy">
+        <div class="gallery-caption">✨ Pelagem branca radiante e cronograma capilar</div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="images/pet5.png" alt="Cão tranquilo e relaxado tomando banho no SPA" loading="lazy">
+        <div class="gallery-caption">🛁 Banho relaxante sem pressa e sem estresse</div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="images/pet6.png" alt="Spitz Alemão com tosa arredondada e bandana Super Pet" loading="lazy">
+        <div class="gallery-caption">❤️ 🐾 Tosa Ursinho e bandana Super Pet · Acabamento VIP</div>
+      </div>
+    </div>
+
+    <div class="tc" style="margin-top: 36px;">
+      <a href="https://www.instagram.com/luciorosaesteticaanimal/" class="btn btn-orange" target="_blank" rel="noopener">
+        <i class="fab fa-instagram"></i> Veja mais fotos e vídeos reais no @luciorosaesteticaanimal
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO PRODUTOS & INOVAÇÃO -->
+<section class="section products" id="produtos">
+  <div class="container">
+    <div class="tc">
+      <span class="badge" style="background: rgba(141,198,63,0.2); color: #C5E87A;">Tecnologia & Bem-Estar</span>
+      <h2 class="section-title">Tecnologia e Inovação no Bem-Estar Pet</h2>
+      <p class="section-subtitle" style="color: rgba(255,255,255,0.75);">
+        “Tecnologia e inovação no bem-estar pet. Alta performance, experiência e resultado.”
+      </p>
+    </div>
+
+    <div class="products-inner">
+      <div class="products-text">
+        <h3>Alta Performance, Experiência de 26 Anos e Resultado Impecável</h3>
+        <p>
+          No Lúcio Rosa Estética Animal, não usamos cosméticos convencionais. Selecionamos rigorosamente linhas profissionais de alta performance cosmética, livres de sulfatos agressivos e com pH perfeitamente compatível com a derme dos animais.
+        </p>
+        <div class="prod-checklist">
+          <div class="prod-item"><i class="fas fa-check-circle"></i> Fórmulas hipoalergênicas e dermatologicamente aprovadas</div>
+          <div class="prod-item"><i class="fas fa-check-circle"></i> Shampoos neutralizadores de odores e clareadores ópticos seguros</div>
+          <div class="prod-item"><i class="fas fa-check-circle"></i> Máscaras de hidratação enriquecidas com queratina vegetal</div>
+          <div class="prod-item"><i class="fas fa-check-circle"></i> Lâminas e tesouras de aço japonês esterilizadas a cada cliente</div>
+        </div>
+
+        <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Vi%20no%20site%20sobre%20os%20cosm%C3%A9ticos%20hipoalerg%C3%AAnicos%20e%20tratamentos%20de%20alta%20performance.%20Gostaria%20de%20saber%20qual%20tratamento%20voc%C3%AA%20recomenda%20para%20a%20pelagem%20do%20meu%20pet.%20%E2%9C%A8" class="btn btn-lime" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> Tirar Dúvidas sobre Nossos Produtos
+        </a>
+      </div>
+
+      <div class="prod-cards-grid">
+        <div class="prod-feature-card">
+          <i class="fas fa-flask"></i>
+          <strong>Cosméticos Nobres</strong>
+          <span>Extratos botânicos que tratam o pelo de dentro para fora.</span>
+        </div>
+        <div class="prod-feature-card">
+          <i class="fas fa-wind"></i>
+          <strong>Secagem Suave</strong>
+          <span>Sopradores acústicos que não assustam os pets e regulagem térmica.</span>
+        </div>
+        <div class="prod-feature-card">
+          <i class="fas fa-shield-virus"></i>
+          <strong>Biossegurança UV</strong>
+          <span>Ambiente e ferramentas higienizados com padrão hospitalar.</span>
+        </div>
+        <div class="prod-feature-card">
+          <i class="fas fa-heart"></i>
+          <strong>Sem Confinamento</strong>
+          <span>Atendimento direto: o pet entra, é atendido e volta para seu tutor.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO DO CURSO DE ESTÉTICA ANIMAL -->
+<section class="course" id="curso">
+  <div class="container course-inner">
+    <div class="course-text">
+      <span class="badge" style="background: rgba(255,255,255,0.22); color: #fff; margin-bottom: 16px;">Formação Profissional</span>
+      <h2>Formando Novos Profissionais em Boituva</h2>
+      <p>
+        <strong>Curso de Estética Animal em Boituva — do iniciante ao profissional ao avançado.</strong> Aprenda as técnicas mais valorizadas do mercado pet com quem tem mais de 26 anos de bagagem prática e mais de 10 certificações de destaque.
+      </p>
+
+      <div class="course-grid">
+        <div class="course-card-item">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <strong>Prática Real com Animais:</strong>
+            Manejo seguro e postura profissional desde o 1º dia de aula.
+          </div>
+        </div>
+        <div class="course-card-item">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <strong>Técnicas de Tesoura:</strong>
+            Domínio da tosa bebêê, tosa de raça e estilizações comerciais.
+          </div>
+        </div>
+        <div class="course-card-item">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <strong>Carding & Desembolo:</strong>
+            Segredos para tratar pelagens densas sem sofrimento para o pet.
+          </div>
+        </div>
+        <div class="course-card-item">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <strong>Certificado Lúcio Rosa:</strong>
+            Reconhecimento de prestígio para ingressar ou abrir seu espaço.
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;">
+        <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Quero%20me%20inscrever%20no%20Curso%20Profissional%20de%20Est%C3%A9tica%20Animal%20em%20Boituva.%20Como%20funciona%20a%20matr%C3%ADcula%20e%20formas%20de%20pagamento%3F%20%F0%9F%8E%93" class="btn btn-dark" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> Quero Fazer o Curso — Falar com Lúcio
+        </a>
+      </div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius); padding: 36px 30px;">
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 12px; color: #fff;">Invista no Mercado que Mais Cresce</h3>
+      <p style="font-size: 0.92rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7;">
+        O setor de estética pet busca profissionais qualificados todos os dias. Tenha aulas diretas com Lúcio Rosa e aprenda tanto a arte do grooming quanto a gestão do atendimento para fidelizar clientes.
+      </p>
+      <ul style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; font-size: 0.88rem;">
+        <li><i class="fas fa-paw" style="margin-right: 8px;"></i> Turmas pequenas e atendimento individualizado</li>
+        <li><i class="fas fa-paw" style="margin-right: 8px;"></i> Apostila e suporte pós-curso para dúvidas</li>
+        <li><i class="fas fa-paw" style="margin-right: 8px;"></i> Presencial em Boituva - SP</li>
+      </ul>
+      <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Gostaria%20de%20receber%20a%20grade%20de%20aulas%20e%20as%20datas%20das%20pr%C3%B3ximas%20turmas%20do%20Curso%20de%20Est%C3%A9tica%20Animal.%20%F0%9F%93%9A" class="btn btn-outline-white" style="width: 100%; text-align: center;" target="_blank" rel="noopener">
+        <i class="fas fa-info-circle"></i> Solicitar Grade & Datas pelo WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO SOBRE O LÚCIO ROSA -->
+<section class="section" id="sobre" style="background: #FFFFFF;">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-img-box">
+        <img src="images/lucio.png" alt="Lúcio Rosa · Esteticista Animal e Educador em Boituva - SP" class="about-photo">
+        <div class="about-tag-badge">
+          <span class="big">26+</span>
+          <span class="small">Anos de Paixão e Cuidado</span>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <span class="badge">Autoridade & Amor</span>
+        <h2 class="section-title">Uma Vida Dedicada aos Companheiros de Quatro Patas</h2>
+        <h4 style="color: var(--orange); font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Lúcio Rosa · Pai do Caleb, Esteticista Animal e Educador</h4>
+
+        <p>
+          Minha vocêação com a estética animal nasceu no ano <strong>2000</strong>. Ao longo de <strong>26 anos de profissão</strong>, atendi milhares de cães e gatos com a mesma ternura, cuidado e responsabilidade com que cuido do <strong>Caleb</strong>, meu grande amor e companheiro fiel.
+        </p>
+
+        <p>
+          São mais de <strong>30 anos morando e construindo laços em Boituva - SP</strong>. Minha trajetória conta com <strong>12 anos de atuação direta em clínica veterinária</strong>, o que me conferiu um olhar clínico diferenciado: sei identificar sensibilidades dermatológicas, respeitar limites articulares e garantir que cada momento na mesa seja calmo e seguro.
+        </p>
+
+        <p>
+          Com mais de <strong>10 diplomas e certificações</strong> em técnicas nacionais e internacionais de tosa, continuo em formação contínua, <strong>rumo a Mestre Esteticista</strong>, para oferecer sempre a vanguarda do embelezamento animal para as famílias de Boituva e região.
+        </p>
+
+        <div class="about-credentials">
+          <div class="cred-item"><i class="fas fa-check-circle"></i> Desde 2000 no mercado</div>
+          <div class="cred-item"><i class="fas fa-check-circle"></i> +10 Diplomas de especialização</div>
+          <div class="cred-item"><i class="fas fa-check-circle"></i> 12 Anos em clínica veterinária</div>
+          <div class="cred-item"><i class="fas fa-check-circle"></i> Especialista em Carding sem dor</div>
+          <div class="cred-item"><i class="fas fa-check-circle"></i> Mais de 30 anos em Boituva - SP</div>
+          <div class="cred-item"><i class="fas fa-check-circle"></i> Rumo a Mestre Esteticista</div>
+        </div>
+
+        <div style="margin-top: 28px;">
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Conheci%20sua%20hist%C3%B3ria%20no%20site%20e%20sua%20trajet%C3%B3ria%20de%2026%20anos.%20Gostaria%20de%20agendar%20um%20atendimento%20especial%20com%20voc%C3%AA%20para%20o%20meu%20c%C3%A3ozinho%21%20%E2%9D%A4%EF%B8%8F" class="btn btn-primary" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Falar Pessoalmente com o Lúcio
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP INTERMEDIÁRIA -->
+<div class="cta-strip">
+  <div class="container">
+    <h2>Mais que banho e tosa: é bem-estar, carinho e respeito! ♥</h2>
+    <p>Agende uma sessão exclusiva para o seu pet e experimente a diferença de um serviço com hora marcada e sem estresse.</p>
+    <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Quero%20garantir%20um%20atendimento%20exclusivo%20com%20hora%20marcada%20e%20sem%20estresse%20para%20o%20meu%20melhor%20amigo.%20Como%20posso%20agendar%3F%20%F0%9F%90%BE" class="btn btn-dark" style="font-size: 1.05rem; padding: 16px 36px;" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i> Agendar Agora via WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- RODAPÉ & CONTATO -->
+<footer id="contato">
+  <div class="container">
+    <div class="footer-top">
+      <!-- Coluna 1 -->
+      <div class="footer-brand">
+        <img src="images/logo.jpg" alt="Lúcio Rosa Estética Animal">
+        <p>Centro Estético Animal de Luxo em Boituva - SP. Desde 2000 cuidando com amor, maestria e o respeito que seu companheiro merece. Pai do Caleb.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/luciorosaesteticaanimal/" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram @luciorosaesteticaanimal"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/LuciosPetShop/" class="social-btn" target="_blank" rel="noopener" aria-label="Facebook Lúcio's Pet Shop"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%20Rosa%21%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20diretamente%20com%20voc%C3%AA.%20%F0%9F%90%BE" class="social-btn" target="_blank" rel="noopener" aria-label="WhatsApp Lúcio Rosa"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Coluna 4: Localização e Mapa -->
+      <div class="footer-col">
+        <h4>Onde Estamos</h4>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Lúcio Rosa Estética Animal</strong><br>
+            Rua Eurides Laureano, 61<br>
+            Bairro Vicente Laureano<br>
+            Boituva - SP
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-clock"></i>
+          <div>
+            Segunda a Sábado · 08h às 18h<br>
+            <em>(Atendimento Exclusivo com Hora Marcada)</em>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <div>(15) 99783-0063</div>
+        </div>
+
+        <div class="footer-map">
+          <iframe 
+            src="https://maps.google.com/maps?q=Rua+Eurides+Laureano+61+Bairro+Vicente+Laureano+Boituva+SP&output=embed&hl=pt-BR"
+            loading="lazy" 
+            title="Localização Lúcio Rosa Estética Animal em Boituva - SP">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        &copy; 2026 <strong>Lúcio Rosa Estética Animal</strong> · Boituva - SP. Todos os direitos reservados.
+      </div>
+      <div>
+        Desenvolvido com carinho para Lúcio Rosa · Desde 2000 cuidando com amor.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS JAVASCRIPT -->
+<script>
+  // Efeito scrolled na Navbar
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Funções do Menu Mobile
+  function openNav() {
+    document.getElementById('mobileNav').classList.add('open');
+  }
+  function closeNav() {
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+
+  // Interatividade das Abas de Preço
+  function openTab(evt, tabId) {
+    const panels = document.querySelectorAll('.tab-panel');
+    panels.forEach(p => p.classList.remove('active'));
+
+    const btns = document.querySelectorAll('.tab-btn');
+    btns.forEach(b => b.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+    evt.currentTarget.classList.add('active');
+  }
+</script>
+</body>
+</html>
