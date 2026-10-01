@@ -1,10 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0D2D3D">
   <title>Lúcio Rosa · Estética Animal em Boituva - SP | Desde 2000</title>
   <meta name="description" content="Centro Estético Animal de Luxo em Boituva - SP. Há 26 anos transformando pelagens com carinho, técnica e excelência. Banho, tosa, hidratação, carding e cursos.">
+  <link rel="preload" as="image" href="images/logo.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -81,21 +83,21 @@
     .mobile-nav a:hover { color: var(--turquoise); }
     .mobile-close { position: absolute; top: 24px; right: 24px; color: #fff; font-size: 1.8rem; cursor: pointer; }
     /* HERO */
-    .hero { min-height: 100vh; background: linear-gradient(135deg, #0D2D3D 0%, #0F3D52 45%, #07707E 100%); position: relative; display: flex; align-items: center; overflow: hidden; padding-top: 90px; }
-    .hero::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 90px; background: var(--bg-light); clip-path: ellipse(65% 100% at 50% 100%); }
-    .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 50px; align-items: center; padding: 60px 0 100px; }
-    .hero-content { color: var(--white); }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(141,198,63,0.18); border: 1px solid rgba(141,198,63,0.35); color: #C5E87A; padding: 6px 16px; border-radius: 50px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 22px; }
-    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.7rem); line-height: 1.15; margin-bottom: 20px; color: #fff; }
+    .hero { min-height: 100vh; background: linear-gradient(135deg, #0D2D3D 0%, #0F3D52 45%, #07707E 100%); position: relative; display: flex; align-items: center; overflow: hidden; padding-top: 96px; padding-bottom: 70px; }
+    .hero::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 75px; background: var(--bg-light); clip-path: ellipse(65% 100% at 50% 100%); pointer-events: none; z-index: 1; }
+    .hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 50px; align-items: center; padding: 40px 0 60px; min-width: 0; width: 100%; }
+    .hero-content { color: var(--white); min-width: 0; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(141,198,63,0.18); border: 1px solid rgba(141,198,63,0.35); color: #C5E87A; padding: 6px 16px; border-radius: 50px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 22px; max-width: 100%; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.7rem); line-height: 1.15; margin-bottom: 20px; color: #fff; word-break: break-word; overflow-wrap: break-word; }
     .hero-title .highlight { color: var(--lime); }
-    .hero-sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 28px; line-height: 1.75; max-width: 530px; font-weight: 300; }
-    .hero-course-box { background: rgba(255,107,0,0.14); border: 1px solid rgba(255,107,0,0.35); border-left: 4px solid var(--orange); padding: 18px 22px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-bottom: 34px; font-size: 0.92rem; line-height: 1.65; }
+    .hero-sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 28px; line-height: 1.75; max-width: 530px; font-weight: 300; word-break: break-word; overflow-wrap: break-word; }
+    .hero-course-box { background: rgba(255,107,0,0.14); border: 1px solid rgba(255,107,0,0.35); border-left: 4px solid var(--orange); padding: 18px 22px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-bottom: 34px; font-size: 0.92rem; line-height: 1.65; word-break: break-word; overflow-wrap: break-word; }
     .hero-course-box strong { color: #FFAA60; display: block; margin-bottom: 4px; font-size: 0.98rem; }
     .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 42px; }
-    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .hero-stat { background: rgba(255,255,255,0.08); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-sm); padding: 16px 10px; text-align: center; }
-    .hero-stat .stat-num { font-size: 1.9rem; font-weight: 800; color: var(--lime); display: block; line-height: 1; }
-    .hero-stat .stat-lbl { font-size: 0.72rem; opacity: 0.8; margin-top: 6px; display: block; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; position: relative; z-index: 3; }
+    .hero-stat { background: rgba(8, 28, 38, 0.78); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.22); border-radius: var(--radius-sm); padding: 16px 10px; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    .hero-stat .stat-num { font-size: 1.9rem; font-weight: 800; color: var(--lime); display: block; line-height: 1.1; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+    .hero-stat .stat-lbl { font-size: 0.74rem; font-weight: 600; color: #FFFFFF !important; opacity: 1 !important; margin-top: 6px; display: block; line-height: 1.35; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
     /* HERO VISUAL */
     .hero-visual { display: flex; justify-content: center; align-items: center; }
     .hero-logo-box { position: relative; width: 340px; height: 340px; }
@@ -159,13 +161,16 @@
     .prod-feature-card strong { display: block; color: #fff; font-size: 0.94rem; margin-bottom: 6px; }
     .prod-feature-card span { font-size: 0.8rem; color: rgba(255,255,255,0.7); line-height: 1.5; display: block; }
     /* COURSE */
-    .course { background: linear-gradient(135deg, var(--orange) 0%, #FF8C00 100%); color: var(--white); position: relative; overflow: hidden; padding: 80px 0; }
-    .course-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; position: relative; z-index: 1; }
-    .course-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.7rem); color: #fff; margin-bottom: 18px; line-height: 1.2; }
-    .course-text p { font-size: 0.98rem; opacity: 0.92; line-height: 1.8; margin-bottom: 28px; }
-    .course-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .course-card-item { background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); border-radius: var(--radius-sm); padding: 18px; display: flex; align-items: flex-start; gap: 12px; font-size: 0.88rem; color: #fff; }
+    .course { background: linear-gradient(135deg, var(--orange) 0%, #FF8C00 100%); color: var(--white); position: relative; overflow: hidden; padding: 80px 0; width: 100%; }
+    .course-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; position: relative; z-index: 1; width: 100%; min-width: 0; }
+    .course-text { min-width: 0; width: 100%; }
+    .course-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.7rem); color: #fff; margin-bottom: 18px; line-height: 1.25; word-break: break-word; overflow-wrap: break-word; }
+    .course-text p { font-size: 0.98rem; opacity: 0.92; line-height: 1.8; margin-bottom: 28px; word-break: break-word; overflow-wrap: break-word; }
+    .course-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; }
+    .course-card-item { background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-radius: var(--radius-sm); padding: 18px; display: flex; align-items: flex-start; gap: 12px; font-size: 0.88rem; color: #fff; min-width: 0; width: 100%; box-sizing: border-box; }
     .course-card-item i { font-size: 1.2rem; margin-top: 2px; flex-shrink: 0; }
+    .course-card-item > div { min-width: 0; flex: 1; word-break: break-word; overflow-wrap: break-word; }
+    .course-highlight-box { background: rgba(255,255,255,0.18); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius); padding: 36px 30px; min-width: 0; max-width: 100%; box-sizing: border-box; }
     /* ABOUT */
     .about-inner { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 70px; align-items: center; }
     .about-img-box { position: relative; }
@@ -313,9 +318,18 @@
 
     /* SMARTPHONES & MOBILE GERAL (Até 768px) */
     @media (max-width: 768px) {
-      .section { padding: 64px 0; }
-      .container { padding: 0 20px; }
+      .section { padding: 60px 0; }
+      .container { padding: 0 16px; }
       
+      /* Botões flexíveis que nunca transbordam a tela */
+      .btn {
+        white-space: normal !important;
+        text-align: center;
+        line-height: 1.35;
+        max-width: 100%;
+        word-break: break-word;
+      }
+
       /* Navegação Mobile com Hamburger */
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
@@ -364,15 +378,35 @@
         padding: 4px;
       }
 
-      /* Hero Mobile */
-      .hero { padding-top: 80px; }
-      .hero-title { font-size: clamp(2rem, 6.5vw, 2.8rem); }
-      .hero-logo-box { width: 230px; height: 230px; }
-      .floating-star { width: 34px; height: 34px; font-size: 0.95rem; }
+      /* Hero Mobile: totalmente visível e sem corte nos números */
+      .hero {
+        min-height: auto;
+        padding-top: 92px;
+        padding-bottom: 50px;
+      }
+      .hero::after {
+        height: 30px; /* Reduzido para NUNCA encobrir as legendas de +26, +10 e 12 */
+        clip-path: ellipse(60% 100% at 50% 100%);
+      }
+      .hero-inner {
+        padding: 10px 0 25px;
+        gap: 28px;
+      }
+      .hero-title { font-size: clamp(1.85rem, 6.2vw, 2.6rem); }
+      .hero-logo-box { width: 220px; height: 220px; }
+      .floating-star { width: 32px; height: 32px; font-size: 0.9rem; }
       
+      .hero-stats {
+        max-width: 100%;
+        margin-top: 20px;
+      }
+      .hero-stat .stat-lbl {
+        font-size: 0.72rem;
+      }
+
       /* Serviços em 1 coluna */
       .services-grid { grid-template-columns: 1fr; gap: 20px; }
-      .service-card { padding: 28px 22px; }
+      .service-card { padding: 26px 20px; }
 
       /* Abas de Preço com Scroll Horizontal Touch */
       .pricing-tabs {
@@ -406,9 +440,21 @@
         padding: 12px 10px;
       }
 
-      /* Produtos e Curso */
+      /* Produtos e Curso Responsivo sem corte de texto */
       .prod-cards-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .course-inner { grid-template-columns: 1fr; gap: 36px; }
       .course-grid { grid-template-columns: 1fr; gap: 12px; }
+      .course-text h2 {
+        font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+      .course-text p {
+        font-size: 0.93rem;
+      }
+      .course-highlight-box {
+        padding: 24px 18px;
+      }
 
       /* Sobre o Lúcio: Badge alinhado sem estourar margem */
       .about-img-box {
@@ -444,15 +490,15 @@
 
     /* DISPOSITIVOS ULTRA COMPACTOS (320px a 480px - iPhone SE, Galaxy A, etc.) */
     @media (max-width: 480px) {
-      .container { padding: 0 16px; }
-      .section { padding: 52px 0; }
-      .section-title { font-size: clamp(1.7rem, 6.5vw, 2.2rem); }
-      .section-subtitle { font-size: 0.92rem; margin-bottom: 34px; }
+      .container { padding: 0 14px; }
+      .section { padding: 48px 0; }
+      .section-title { font-size: clamp(1.65rem, 6.5vw, 2.1rem); }
+      .section-subtitle { font-size: 0.92rem; margin-bottom: 30px; }
       
       /* Botões em 100% de largura para toque fácil com polegar */
       .btn {
         width: 100%;
-        padding: 14px 20px;
+        padding: 14px 18px;
         font-size: 0.92rem;
       }
       .hero-btns {
@@ -465,25 +511,26 @@
         height: 190px;
       }
       
-      /* Stats do Hero em 3 colunas compactas */
+      /* Stats do Hero em 3 colunas compactas e 100% legíveis */
       .hero-stats {
         grid-template-columns: repeat(3, 1fr);
         gap: 6px;
         width: 100%;
       }
       .hero-stat {
-        padding: 12px 6px;
+        padding: 12px 4px;
       }
       .hero-stat .stat-num {
         font-size: 1.45rem;
       }
       .hero-stat .stat-lbl {
-        font-size: 0.65rem;
+        font-size: 0.67rem;
+        line-height: 1.25;
       }
 
       /* Cards de Preço em 1 coluna */
       .pricing-grid { grid-template-columns: 1fr; }
-      .price-card { padding: 26px 18px; }
+      .price-card { padding: 24px 16px; }
 
       /* Galeria em 1 coluna para fotos maiores e nítidas */
       .gallery-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -492,6 +539,7 @@
       /* Produtos e Curso */
       .prod-cards-grid { grid-template-columns: 1fr; }
       .about-credentials { grid-template-columns: 1fr; gap: 10px; }
+      .course-highlight-box { padding: 20px 14px; }
       
       .cta-strip h2 { font-size: 1.55rem; }
     }
@@ -525,7 +573,10 @@
 <nav class="navbar" id="navbar">
   <div class="container nav-inner">
     <a href="#inicio" class="nav-logo">
-      <img src="images/logo.jpg" alt="Lúcio Rosa Estética Animal">
+      <picture>
+        <source srcset="images/logo.webp" type="image/webp">
+        <img src="images/logo.jpg" alt="Lúcio Rosa Estética Animal" width="50" height="50">
+      </picture>
       <div class="nav-brand-text">
         <div class="brand-name">Lúcio Rosa</div>
         <div class="brand-sub">Estética Animal · Desde 2000</div>
@@ -600,7 +651,10 @@
 
     <div class="hero-visual">
       <div class="hero-logo-box">
-        <img src="images/logo.jpg" alt="Lúcio Rosa Estética Animal - Desde 2000">
+        <picture>
+          <source srcset="images/logo.webp" type="image/webp">
+          <img src="images/logo.jpg" alt="Lúcio Rosa Estética Animal - Desde 2000" width="340" height="340" fetchpriority="high">
+        </picture>
         <div class="floating-star fs-1"><i class="fas fa-star"></i></div>
         <div class="floating-star fs-2"><i class="fas fa-scissors"></i></div>
         <div class="floating-star fs-3"><i class="fas fa-heart"></i></div>
@@ -800,7 +854,7 @@
           <div class="price-badge">Melhor Escolha ⭐</div>
           <div class="size">Combo Banho + Tosa Bebê</div>
           <div class="amount" style="letter-spacing: 2px; color: var(--turquoise);">$$$</div>
-          <p class="desc">Banho SPA + hidratação leve + estilização bebêê completa na tesoura. Visual impecável e fofo.</p>
+          <p class="desc">Banho SPA + hidratação leve + estilização bebê completa na tesoura. Visual impecável e fofo.</p>
         
           <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Quero%20agendar%20o%20Combo%20Banho%20%2B%20Tosa%20Beb%C3%AA%20completa%20para%20o%20meu%20pet.%20Como%20podemos%20agendar%3F%20%E2%AD%90%F0%9F%90%BE" class="btn-card-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar Banho + Tosa Bebê</a>
 </div>
@@ -907,32 +961,50 @@
 
     <div class="gallery-grid">
       <div class="gallery-card">
-        <img src="images/pet1.jpg" alt="Shih-tzu com tosa bebêê impecável e cachecol de inverno" loading="lazy">
-        <div class="gallery-caption">🐾 Shih-tzu: tosa bebêê artística e pelagem macia</div>
+        <picture>
+          <source srcset="images/pet1.webp" type="image/webp">
+          <img src="images/pet1.jpg" alt="Shih-tzu com tosa bebê impecável e cachecol de inverno" loading="lazy" decoding="async" width="800" height="800">
+        </picture>
+        <div class="gallery-caption">🐾 Shih-tzu: tosa bebê artística e pelagem macia</div>
       </div>
 
       <div class="gallery-card">
-        <img src="images/pet2.jpg" alt="Spitz Alemão com tiara de princesa e bandanas" loading="lazy">
+        <picture>
+          <source srcset="images/pet2.webp" type="image/webp">
+          <img src="images/pet2.jpg" alt="Spitz Alemão com tiara de princesa e bandanas" loading="lazy" decoding="async" width="800" height="800">
+        </picture>
         <div class="gallery-caption">👑 Penteado nobre com tiara e acabamento VIP</div>
       </div>
 
       <div class="gallery-card">
-        <img src="images/pet3.jpg" alt="Spitz Alemão com tosa e gravata no fundo oficial Lúcio Rosa Desde 2000" loading="lazy">
+        <picture>
+          <source srcset="images/pet3.webp" type="image/webp">
+          <img src="images/pet3.jpg" alt="Spitz Alemão com tosa e gravata no fundo oficial Lúcio Rosa Desde 2000" loading="lazy" decoding="async" width="800" height="800">
+        </picture>
         <div class="gallery-caption">✂️ Especialista em pelagem dupla e tosa na tesoura</div>
       </div>
 
       <div class="gallery-card">
-        <img src="images/pet4.png" alt="Cão branco de pelagem brilhante e gravata estilizada" loading="lazy">
+        <picture>
+          <source srcset="images/pet4.webp" type="image/webp">
+          <img src="images/pet4.jpg" alt="Cão branco de pelagem brilhante e gravata estilizada" loading="lazy" decoding="async" width="800" height="800">
+        </picture>
         <div class="gallery-caption">✨ Pelagem branca radiante e cronograma capilar</div>
       </div>
 
       <div class="gallery-card">
-        <img src="images/pet5.png" alt="Cão tranquilo e relaxado tomando banho no SPA" loading="lazy">
+        <picture>
+          <source srcset="images/pet5.webp" type="image/webp">
+          <img src="images/pet5.jpg" alt="Cão tranquilo e relaxado tomando banho no SPA" loading="lazy" decoding="async" width="800" height="800">
+        </picture>
         <div class="gallery-caption">🛁 Banho relaxante sem pressa e sem estresse</div>
       </div>
 
       <div class="gallery-card">
-        <img src="images/pet6.png" alt="Spitz Alemão com tosa arredondada e bandana Super Pet" loading="lazy">
+        <picture>
+          <source srcset="images/pet6.webp" type="image/webp">
+          <img src="images/pet6.jpg" alt="Spitz Alemão com tosa arredondada e bandana Super Pet" loading="lazy" decoding="async" width="800" height="800">
+        </picture>
         <div class="gallery-caption">❤️ 🐾 Tosa Ursinho e bandana Super Pet · Acabamento VIP</div>
       </div>
     </div>
@@ -1022,7 +1094,7 @@
           <i class="fas fa-check-circle"></i>
           <div>
             <strong>Técnicas de Tesoura:</strong>
-            Domínio da tosa bebêê, tosa de raça e estilizações comerciais.
+            Domínio da tosa bebê, tosa de raça e estilizações comerciais.
           </div>
         </div>
         <div class="course-card-item">
@@ -1048,7 +1120,7 @@
       </div>
     </div>
 
-    <div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius); padding: 36px 30px;">
+    <div class="course-highlight-box">
       <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 12px; color: #fff;">Invista no Mercado que Mais Cresce</h3>
       <p style="font-size: 0.92rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7;">
         O setor de estética pet busca profissionais qualificados todos os dias. Tenha aulas diretas com Lúcio Rosa e aprenda tanto a arte do grooming quanto a gestão do atendimento para fidelizar clientes.
@@ -1070,7 +1142,10 @@
   <div class="container">
     <div class="about-inner">
       <div class="about-img-box">
-        <img src="images/lucio.png" alt="Lúcio Rosa · Esteticista Animal e Educador em Boituva - SP" class="about-photo">
+        <picture>
+          <source srcset="images/lucio.webp" type="image/webp">
+          <img src="images/lucio.jpg" alt="Lúcio Rosa · Esteticista Animal e Educador em Boituva - SP" class="about-photo" loading="lazy" decoding="async" width="800" height="754">
+        </picture>
         <div class="about-tag-badge">
           <span class="big">26+</span>
           <span class="small">Anos de Paixão e Cuidado</span>
@@ -1130,7 +1205,10 @@
     <div class="footer-top">
       <!-- Coluna 1 -->
       <div class="footer-brand">
-        <img src="images/logo.jpg" alt="Lúcio Rosa Estética Animal">
+        <picture>
+          <source srcset="images/logo.webp" type="image/webp">
+          <img src="images/logo.jpg" alt="Lúcio Rosa Estética Animal" width="70" height="70" loading="lazy">
+        </picture>
         <p>Centro Estético Animal de Luxo em Boituva - SP. Desde 2000 cuidando com amor, maestria e o respeito que seu companheiro merece. Pai do Caleb.</p>
         <div class="social-links">
           <a href="https://www.instagram.com/luciorosaesteticaanimal/" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram @luciorosaesteticaanimal"><i class="fab fa-instagram"></i></a>

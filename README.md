@@ -1,4 +1,4 @@
-﻿# Lúcio Rosa · Estética Animal
+# Lúcio Rosa · Estética Animal
 
 > Landing Page moderna, responsiva e de alta conversão para o centro de estética animal de luxo **Lúcio Rosa Estética Animal**, localizado em Boituva - SP.
 
@@ -33,17 +33,17 @@ Landing page desenvolvida para apresentar os serviços de banho, tosa, tratament
 
 ## 📂 Estrutura de Arquivos
 ```
-├── index.html        # Landing page completa (HTML5, CSS3, Vanilla JS)
+├── index.html        # Landing page completa ultrarrápida (HTML5, CSS3, Vanilla JS)
 ├── README.md         # Documentação do projeto
-└── images/
-    ├── logo.jpg      # Logotipo oficial Lúcio Rosa
-    ├── lucio.png     # Foto profissional do Lúcio Rosa em atendimento
-    ├── pet1.jpg      # Foto real: Shih-tzu tosa bebê
-    ├── pet2.jpg      # Foto real: Dupla Spitz Alemão com tiara
-    ├── pet3.jpg      # Foto real: Spitz Alemão no painel oficial
-    ├── pet4.png      # Foto real: Cão branco com gravata
-    ├── pet5.png      # Foto real: Cão no banho relaxante SPA
-    └── pet6.png      # Foto real: Spitz Alemão tosa ursinho Super Pet
+└── images/           # Imagens de alta performance comprimidas em WebP + JPG
+    ├── logo.webp / logo.jpg
+    ├── lucio.webp / lucio.jpg
+    ├── pet1.webp / pet1.jpg
+    ├── pet2.webp / pet2.jpg
+    ├── pet3.webp / pet3.webp
+    ├── pet4.webp / pet4.jpg
+    ├── pet5.webp / pet5.jpg
+    └── pet6.webp / pet6.jpg
 ```
 
 ## 🌐 Publicação (Deploy)
