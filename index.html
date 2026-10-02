@@ -99,61 +99,14 @@
     .hero-stat .stat-num { font-size: 1.9rem; font-weight: 800; color: var(--lime); display: block; line-height: 1.1; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
     .hero-stat .stat-lbl { font-size: 0.74rem; font-weight: 600; color: #FFFFFF !important; opacity: 1 !important; margin-top: 6px; display: block; line-height: 1.35; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
 
-    /* HERO VISUAL (OPÇÃO 1: FOTO EM DESTAQUE) */
-    .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; }
-    .hero-photo-card {
-      position: relative;
-      width: 100%;
-      max-width: 440px;
-    }
-    .hero-photo-wrap {
-      border-radius: 26px;
-      overflow: hidden;
-      border: 3.5px solid rgba(0, 191, 216, 0.45);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 35px rgba(0, 191, 216, 0.25);
-      aspect-ratio: 4 / 4.7;
-      background: #0D2D3D;
-    }
-    .hero-photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-      transition: transform 0.6s ease;
-    }
-    .hero-photo-wrap:hover img {
-      transform: scale(1.03);
-    }
-    .hero-floating-badge {
-      position: absolute;
-      background: rgba(13, 45, 61, 0.92);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1.5px solid rgba(0, 191, 216, 0.45);
-      border-radius: 50px;
-      padding: 10px 20px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.4);
-      z-index: 5;
-      font-size: 0.86rem;
-      font-weight: 700;
-      color: #FFFFFF;
-      white-space: nowrap;
-      animation: floatY 4s ease-in-out infinite;
-    }
-    .hero-floating-badge.badge-top {
-      top: -14px;
-      right: -10px;
-    }
-    .hero-floating-badge.badge-bottom {
-      bottom: -16px;
-      left: -12px;
-      animation-delay: 2s;
-    }
-    .hero-floating-badge i { font-size: 1.1rem; }
+    /* HERO VISUAL (LOGO) */
+    .hero-visual { display: flex; justify-content: center; align-items: center; }
+    .hero-logo-box { position: relative; width: 340px; height: 340px; }
+    .hero-logo-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid var(--turquoise); box-shadow: 0 0 60px rgba(0,191,216,0.35), 0 0 0 12px rgba(141,198,63,0.12), 0 0 0 24px rgba(255,107,0,0.08); position: relative; z-index: 1; }
+    .floating-star { position: absolute; width: 40px; height: 40px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.1rem; box-shadow: 0 4px 16px rgba(255,107,0,0.5); z-index: 2; animation: floatY 3s ease-in-out infinite; }
+    .fs-1 { top: -8px; left: 50%; transform: translateX(-50%); }
+    .fs-2 { top: 50%; right: -12px; transform: translateY(-50%); animation-delay: 1s; }
+    .fs-3 { top: 50%; left: -12px; transform: translateY(-50%); animation-delay: 2s; }
     @keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
     /* SERVICES */
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
@@ -692,10 +645,8 @@
       .section { padding: 75px 0; }
       .nav-links a { padding: 6px 10px; font-size: 0.84rem; }
       .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; padding-top: 40px; }
-      .hero-visual { display: flex; order: -1; margin: 0 auto; max-width: 380px; width: 100%; }
-      .hero-photo-wrap { aspect-ratio: 4 / 4.2; max-height: 380px; }
-      .hero-floating-badge.badge-top { top: -10px; right: -6px; font-size: 0.78rem; padding: 7px 14px; }
-      .hero-floating-badge.badge-bottom { bottom: -12px; left: -6px; font-size: 0.78rem; padding: 7px 14px; }
+      .hero-visual { order: -1; margin: 0 auto; }
+      .hero-logo-box { width: 260px; height: 260px; margin: 0 auto; }
       .hero-sub { margin-left: auto; margin-right: auto; }
       .hero-course-box { text-align: left; max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 28px; }
       .hero-btns { justify-content: center; }
@@ -896,8 +847,7 @@
         width: 100%;
         gap: 10px;
       }
-      .hero-visual { max-width: 300px; }
-      .hero-photo-wrap { aspect-ratio: 1 / 1; max-height: 300px; }
+      .hero-logo-box { width: 220px; height: 220px; }
       
       /* Stats do Hero em 3 colunas compactas e 100% legíveis */
       .hero-stats {
@@ -1003,13 +953,10 @@
 <section class="hero" id="inicio">
   <div class="container hero-inner">
     <div class="hero-content">
-      <div class="hero-eyebrow reveal">
-        <i class="fas fa-star"></i> Boituva - SP · Centro Estético de Luxo
-      </div>
-      <h1 class="hero-title reveal delay-1">
+      <h1 class="hero-title reveal">
         Há <span class="highlight">27 anos</span> trabalhando com o que amo.
       </h1>
-      <p class="hero-sub reveal delay-2">
+      <p class="hero-sub reveal delay-1">
         Estética de alto padrão, acabamento impecável e especialista em transformações de pelagem. O cuidado e o luxo que seu melhor amigo merece.
       </p>
 
@@ -1044,19 +991,14 @@
     </div>
 
     <div class="hero-visual reveal-right">
-      <div class="hero-photo-card">
-        <div class="hero-photo-wrap">
-          <picture>
-            <source srcset="images/hero-lucio.webp" type="image/webp">
-            <img src="images/hero-lucio.jpg" alt="Lúcio Rosa no Centro Estético com Golden Retriever" width="800" height="909" fetchpriority="high">
-          </picture>
-        </div>
-        <div class="hero-floating-badge badge-top">
-          <i class="fas fa-certificate" style="color: #FFB800;"></i> Especialista Lúcio Rosa
-        </div>
-        <div class="hero-floating-badge badge-bottom">
-          <i class="fas fa-paw" style="color: var(--lime);"></i> 27 Anos de Dedicação
-        </div>
+      <div class="hero-logo-box">
+        <picture>
+          <source srcset="images/logo.webp" type="image/webp">
+          <img src="images/logo.jpg" alt="Lúcio Rosa Estética Animal" width="340" height="340" fetchpriority="high">
+        </picture>
+        <div class="floating-star fs-1"><i class="fas fa-star"></i></div>
+        <div class="floating-star fs-2"><i class="fas fa-scissors"></i></div>
+        <div class="floating-star fs-3"><i class="fas fa-heart"></i></div>
       </div>
     </div>
   </div>
