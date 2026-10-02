@@ -24,11 +24,12 @@ Landing page desenvolvida para apresentar os serviços de banho, tosa, tratament
 - **Hero Section de Alto Impacto:** com métricas de autoridade (27+ anos de experiência, 10+ diplomas, 12 anos em clínica) e chamada para o curso.
 - **Serviços Especializados:** 6 cards interativos com botões dedicados de agendamento.
 - **Tabela de Preços com Abas:** 5 categorias (Banhos, Tosas, Combos, Tratamentos e Pacotes Mensais) com 19 cards e botões individuais de WhatsApp.
+- **Depoimentos Reais dos Tutores:** 5 cards com feedbacks espontâneos (WhatsApp e Instagram), estrelas, nomes dos pets e modal interativo para ampliação dos prints reais.
 - **Galeria com Fotos Reais:** 6 fotos de alta resolução de pets reais atendidos no espaço.
 - **Produtos & Inovação:** seção de tecnologia no bem-estar animal com biossegurança UV e cosméticos hipoalergênicos.
 - **Curso de Estética Animal:** seção dedicada para formação de novos profissionais em Boituva - SP.
-- **Sobre o Lúcio Rosa:** história real, autoridade profissional, conexão com o cão Caleb e localização em Boituva há mais de 30 anos.
-- **Integração Completa com WhatsApp:** 11+ mensagens pré-formatadas para cada CTA e card de serviço (+55 15 99783-0063).
+- **Sobre o Lúcio Rosa:** história real, autoridade profissional, conexão com seu filho Caleb e localização em Boituva há mais de 30 anos.
+- **Integração Completa com WhatsApp:** mensagens pré-formatadas para cada CTA e card de serviço (+55 15 99783-0063).
 - **Rodapé Completo:** com endereço físico na Rua Eurides Laureano 61, horário de funcionamento e mapa interativo do Google Maps.
 
 ## 📂 Estrutura de Arquivos
@@ -38,12 +39,8 @@ Landing page desenvolvida para apresentar os serviços de banho, tosa, tratament
 └── images/           # Imagens de alta performance comprimidas em WebP + JPG
     ├── logo.webp / logo.jpg
     ├── lucio.webp / lucio.jpg
-    ├── pet1.webp / pet1.jpg
-    ├── pet2.webp / pet2.jpg
-    ├── pet3.webp / pet3.webp
-    ├── pet4.webp / pet4.jpg
-    ├── pet5.webp / pet5.jpg
-    └── pet6.webp / pet6.jpg
+    ├── depoimento-1..5.webp / .jpg   # Prints reais de depoimentos
+    └── pet1..6.webp / .jpg            # Fotos reais dos pets atendidos
 ```
 
 ## 🌐 Publicação (Deploy)

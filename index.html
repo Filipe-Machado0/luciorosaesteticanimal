@@ -263,6 +263,215 @@
       box-shadow: 0 4px 16px rgba(0,191,216,0.35);
     }
 
+    /* DEPOIMENTOS E FEEDBACKS REAIS */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 26px;
+      margin-top: 36px;
+    }
+    @media (min-width: 992px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+      .testimonial-card:nth-child(1),
+      .testimonial-card:nth-child(2),
+      .testimonial-card:nth-child(3) {
+        grid-column: span 2;
+      }
+      .testimonial-card:nth-child(4) {
+        grid-column: 2 / span 2;
+      }
+      .testimonial-card:nth-child(5) {
+        grid-column: 4 / span 2;
+      }
+    }
+    @media (max-width: 991px) and (min-width: 641px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .testimonial-card:nth-child(5) {
+        grid-column: span 2;
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+    @media (max-width: 640px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .testimonial-card {
+      background: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      box-shadow: 0 8px 24px rgba(13,45,61,0.06);
+      border: 1px solid rgba(0,191,216,0.14);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(13,45,61,0.12);
+      border-color: var(--turquoise);
+    }
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .testimonial-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--turquoise), var(--turquoise-dark));
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.15rem;
+      box-shadow: 0 4px 12px rgba(0,191,216,0.3);
+      flex-shrink: 0;
+    }
+    .testimonial-info h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0;
+      line-height: 1.25;
+    }
+    .testimonial-info .pet-badge {
+      display: inline-block;
+      font-size: 0.76rem;
+      color: var(--turquoise-dark);
+      font-weight: 600;
+    }
+    .testimonial-stars {
+      color: #FFB800;
+      font-size: 0.95rem;
+      margin-top: 2px;
+      letter-spacing: 2px;
+    }
+    .testimonial-quote {
+      font-size: 0.92rem;
+      color: #334E68;
+      line-height: 1.6;
+      font-style: italic;
+      margin-bottom: 18px;
+      position: relative;
+      padding-left: 6px;
+    }
+    .testimonial-image-box {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      background: #F8FAFC;
+      position: relative;
+      margin-top: auto;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .testimonial-image-box img {
+      width: 100%;
+      height: 380px;
+      object-fit: contain;
+      display: block;
+      background: #F1F5F9;
+      transition: transform 0.35s ease;
+    }
+    .testimonial-image-box:hover img {
+      transform: scale(1.02);
+    }
+    .testimonial-source-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 5px 11px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      z-index: 2;
+    }
+    .testimonial-source-badge.wa {
+      background: rgba(37,211,102,0.95);
+    }
+    .testimonial-source-badge.ig {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+    .testimonial-trust-box {
+      margin-top: 45px;
+      background: linear-gradient(135deg, rgba(0,191,216,0.08) 0%, rgba(141,198,63,0.08) 100%);
+      border: 1.5px dashed var(--turquoise);
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      text-align: center;
+    }
+    .testimonial-trust-box h3 {
+      font-size: 1.35rem;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .testimonial-trust-box p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+    /* Modal de Zoom dos Prints */
+    .testimonial-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(13,45,61,0.92);
+      backdrop-filter: blur(10px);
+      z-index: 3000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      cursor: zoom-out;
+    }
+    .testimonial-modal.active {
+      display: flex;
+    }
+    .testimonial-modal img {
+      max-width: 90vw;
+      max-height: 88vh;
+      border-radius: 14px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      object-fit: contain;
+      cursor: default;
+    }
+    .testimonial-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      color: #FFFFFF;
+      font-size: 2.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      line-height: 1;
+      transition: var(--transition);
+    }
+    .testimonial-modal-close:hover {
+      color: var(--turquoise);
+      transform: scale(1.15);
+    }
+
     /* FLOATING WHATSAPP */
     .floating-whatsapp { position: fixed; bottom: 26px; right: 26px; z-index: 1200; width: 62px; height: 62px; border-radius: 50%; background: #25D366; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; box-shadow: 0 8px 25px rgba(37,211,102,0.55); transition: var(--transition); animation: pulseWa 2.5s infinite; }
     .floating-whatsapp:hover { transform: scale(1.1); }
@@ -532,6 +741,10 @@
       .pricing-grid { grid-template-columns: 1fr; }
       .price-card { padding: 24px 16px; }
 
+      /* Depoimentos no Mobile */
+      .testimonial-card { padding: 20px 16px; }
+      .testimonial-image-box img { height: 320px; }
+
       /* Galeria em 1 coluna para fotos maiores e nítidas */
       .gallery-grid { grid-template-columns: 1fr; gap: 16px; }
       .gallery-card { aspect-ratio: 1/1; }
@@ -559,6 +772,7 @@
   <a href="#inicio" onclick="closeNav()">Início</a>
   <a href="#servicos" onclick="closeNav()">Serviços</a>
   <a href="#precos" onclick="closeNav()">Preços</a>
+  <a href="#depoimentos" onclick="closeNav()">Depoimentos</a>
   <a href="#galeria" onclick="closeNav()">Galeria</a>
   <a href="#produtos" onclick="closeNav()">Produtos</a>
   <a href="#curso" onclick="closeNav()">Curso</a>
@@ -586,6 +800,7 @@
     <div class="nav-links">
       <a href="#servicos">Serviços</a>
       <a href="#precos">Preços</a>
+      <a href="#depoimentos">Depoimentos</a>
       <a href="#galeria">Galeria</a>
       <a href="#produtos">Produtos</a>
       <a href="#curso">Curso</a>
@@ -948,8 +1163,163 @@
   </div>
 </section>
 
+<!-- SEÇÃO DEPOIMENTOS & FEEDBACKS REAIS -->
+<section class="section" id="depoimentos" style="background: var(--bg-light);">
+  <div class="container">
+    <div class="tc">
+      <span class="badge lime">Depoimentos Reais</span>
+      <h2 class="section-title">O Que os Tutores Dizem Sobre o Nosso Cuidado</h2>
+      <p class="section-subtitle">
+        Mensagens espontâneas e carinho de quem confia seu melhor amigo ao Lúcio Rosa em Boituva - SP. Cuidado individual, paciência e resultados impecáveis.
+      </p>
+    </div>
+
+    <div class="testimonials-grid">
+      <!-- Depoimento 1: Rafa (Apolo) -->
+      <div class="testimonial-card">
+        <div>
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">R</div>
+            <div class="testimonial-info">
+              <h4>Rafa</h4>
+              <span class="pet-badge"><i class="fas fa-paw"></i> Tutor do Apolo (Bully)</span>
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+            </div>
+          </div>
+          <p class="testimonial-quote">
+            "Opaaaa, boa tarde irmão. O banho PetSPA foi top demais, o Apolo está com um pelo e com a pele maravilhosa! Obrigado pela atenção e todo carinho com nosso filho de 4 patas."
+          </p>
+        </div>
+        <div class="testimonial-image-box" onclick="openTestimonialModal('images/depoimento-1.jpg')">
+          <picture>
+            <source srcset="images/depoimento-1.webp" type="image/webp">
+            <img src="images/depoimento-1.jpg" alt="Depoimento de Rafa sobre o banho PetSPA do cão Apolo" loading="lazy">
+          </picture>
+          <div class="testimonial-source-badge wa">
+            <i class="fab fa-whatsapp"></i> WhatsApp Real • Toque para ampliar
+          </div>
+        </div>
+      </div>
+
+      <!-- Depoimento 2: Vânia (Dudu) -->
+      <div class="testimonial-card">
+        <div>
+          <div class="testimonial-header">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #FF6B00, #E05300);">V</div>
+            <div class="testimonial-info">
+              <h4>Vânia</h4>
+              <span class="pet-badge"><i class="fas fa-paw"></i> Tutora do Dudu</span>
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+            </div>
+          </div>
+          <p class="testimonial-quote">
+            "Lúcio como sempre arrasando. Obrigada pelos cuidados com meu Dudu. Ficou show de bola ⚽🏐🏈"
+          </p>
+        </div>
+        <div class="testimonial-image-box" onclick="openTestimonialModal('images/depoimento-2.jpg')">
+          <picture>
+            <source srcset="images/depoimento-2.webp" type="image/webp">
+            <img src="images/depoimento-2.jpg" alt="Depoimento de Vânia elogiando o atendimento do pet Dudu" loading="lazy">
+          </picture>
+          <div class="testimonial-source-badge wa">
+            <i class="fab fa-whatsapp"></i> WhatsApp Real • Toque para ampliar
+          </div>
+        </div>
+      </div>
+
+      <!-- Depoimento 3: Taty Rocha (Bidu) -->
+      <div class="testimonial-card">
+        <div>
+          <div class="testimonial-header">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #8DC63F, #6CA327);">T</div>
+            <div class="testimonial-info">
+              <h4>Taty Rocha</h4>
+              <span class="pet-badge"><i class="fas fa-paw"></i> Tutora do Bidu</span>
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+            </div>
+          </div>
+          <p class="testimonial-quote">
+            "O melhor! O Bidu fica perfeito toda vez que você coloca a mão, faz milagre kkkkk olha que o Bidu vai daquele jeito kkkkkk"
+          </p>
+        </div>
+        <div class="testimonial-image-box" onclick="openTestimonialModal('images/depoimento-3.jpg')">
+          <picture>
+            <source srcset="images/depoimento-3.webp" type="image/webp">
+            <img src="images/depoimento-3.jpg" alt="Depoimento de Taty Rocha no Instagram sobre o pet Bidu" loading="lazy">
+          </picture>
+          <div class="testimonial-source-badge ig">
+            <i class="fab fa-instagram"></i> Instagram Real • Toque para ampliar
+          </div>
+        </div>
+      </div>
+
+      <!-- Depoimento 4: Elissa (Bob) -->
+      <div class="testimonial-card">
+        <div>
+          <div class="testimonial-header">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #00BFD8, #0D2D3D);">E</div>
+            <div class="testimonial-info">
+              <h4>Elissa</h4>
+              <span class="pet-badge"><i class="fas fa-paw"></i> Tutora do Bob</span>
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+            </div>
+          </div>
+          <p class="testimonial-quote">
+            "Desde a primeira vez que levei o Bob para você tosar e dar banho, eu desisti de levar em outros pets.. agora ele chega todo feliz, limpinho e cheiroso. Adoro o cuidado que você tem com meus dois cachorros, por isso nunca troco de pet! Obrigada pelo carinho sempre! ❤️"
+          </p>
+        </div>
+        <div class="testimonial-image-box" onclick="openTestimonialModal('images/depoimento-4.jpg')">
+          <picture>
+            <source srcset="images/depoimento-4.webp" type="image/webp">
+            <img src="images/depoimento-4.jpg" alt="Depoimento de Elissa sobre a felicidade e cuidado com o cão Bob" loading="lazy">
+          </picture>
+          <div class="testimonial-source-badge wa">
+            <i class="fab fa-whatsapp"></i> WhatsApp Real • Toque para ampliar
+          </div>
+        </div>
+      </div>
+
+      <!-- Depoimento 5: Lara -->
+      <div class="testimonial-card">
+        <div>
+          <div class="testimonial-header">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #FF6B00, #00BFD8);">L</div>
+            <div class="testimonial-info">
+              <h4>Lara</h4>
+              <span class="pet-badge"><i class="fas fa-paw"></i> Tutora Multi-pets</span>
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+            </div>
+          </div>
+          <p class="testimonial-quote">
+            "Quero deixar meu agradecimento ao Lúcio e toda a equipe pelo carinho, atenção e cuidado com os nossos pets. É muito bom poder confiar em profissionais que tratam os animais com tanto amor e dedicação. Fazem a diferença na vida dos nossos companheiros!”"
+          </p>
+        </div>
+        <div class="testimonial-image-box" onclick="openTestimonialModal('images/depoimento-5.jpg')">
+          <picture>
+            <source srcset="images/depoimento-5.webp" type="image/webp">
+            <img src="images/depoimento-5.jpg" alt="Depoimento de Lara agradecendo pelo carinho e dedicação com os pets" loading="lazy">
+          </picture>
+          <div class="testimonial-source-badge wa">
+            <i class="fab fa-whatsapp"></i> WhatsApp Real • Toque para ampliar
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOX DE CONFIANÇA & CTA -->
+    <div class="testimonial-trust-box">
+      <div style="font-size: 2rem; margin-bottom: 8px;">🐾 ✨ 🐾</div>
+      <h3>Seu filho de 4 patas também merece esse cuidado VIP</h3>
+      <p>Agende com hora marcada e proporcione uma experiência sem traumas, com produtos de alta performance e muito amor.</p>
+      <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Vi%20os%20depoimentos%20no%20site%20e%20quero%20agendar%20um%20atendimento%20especial%20para%20o%20meu%20pet.%20%F0%9F%90%BE" class="btn btn-lime" style="font-size: 1rem; padding: 15px 32px;" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Quero Agendar para o Meu Pet
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- GALERIA DE FOTOS REAIS -->
-<section class="section" id="galeria" style="background: var(--bg-light);">
+<section class="section" id="galeria" style="background: #FFFFFF;">
   <div class="container">
     <div class="tc">
       <span class="badge lime">Galeria dos Companheiros</span>
@@ -1259,6 +1629,12 @@
   </div>
 </footer>
 
+<!-- MODAL DE VISUALIZAÇÃO DE DEPOIMENTOS (ZOOM NO PRINT) -->
+<div id="testimonialModal" class="testimonial-modal" onclick="closeTestimonialModal()" role="dialog" aria-modal="true" aria-label="Visualização do Print Real">
+  <span class="testimonial-modal-close" onclick="closeTestimonialModal()" aria-label="Fechar">&times;</span>
+  <img id="testimonialModalImg" src="" alt="Print do Depoimento Real Lúcio Rosa" onclick="event.stopPropagation()">
+</div>
+
 <!-- SCRIPTS JAVASCRIPT -->
 <script>
   // Efeito scrolled na Navbar
@@ -1286,6 +1662,24 @@
     document.getElementById(tabId).classList.add('active');
     evt.currentTarget.classList.add('active');
   }
+
+  // Modal de Depoimentos (Zoom nos Prints Reais)
+  function openTestimonialModal(src) {
+    const modal = document.getElementById('testimonialModal');
+    const img = document.getElementById('testimonialModalImg');
+    img.src = src;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeTestimonialModal() {
+    const modal = document.getElementById('testimonialModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeTestimonialModal();
+  });
 </script>
 </body>
 </html>
+
