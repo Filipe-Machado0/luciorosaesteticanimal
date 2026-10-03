@@ -168,6 +168,25 @@
       padding-top: 48px;
       border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
+    .petspa-brand-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .petspa-brand-logo {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      border: 3px solid rgba(0, 191, 216, 0.5);
+      box-shadow: 0 0 25px rgba(0, 191, 216, 0.35);
+      transition: transform 0.4s ease;
+      background: #09202E;
+    }
+    .petspa-brand-logo:hover {
+      transform: scale(1.08) rotate(5deg);
+    }
     .products-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -1825,13 +1844,24 @@
     <!-- VITRINE DE PRODUTOS PROFISSIONAIS PETSPA PROCARE -->
     <div class="products-showcase reveal">
       <div class="tc">
-        <span class="badge" style="background: rgba(0, 191, 216, 0.2); color: var(--turquoise); font-size: 0.82rem;">Linha Profissional PetSPA ProCare</span>
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #fff; margin-top: 10px; margin-bottom: 8px;">
-          Cosméticos de Alta Performance Usados em Nossos Banhos
-        </h3>
-        <p style="color: rgba(255,255,255,0.75); font-size: 0.95rem; max-width: 620px; margin: 0 auto;">
-          Toque em qualquer produto para ver em detalhes como ele cuida e transforma a pelagem do seu pet.
-        </p>
+        <div class="petspa-brand-header">
+          <picture>
+            <source srcset="images/petspa-logo.webp" type="image/webp">
+            <img src="images/petspa-logo.png" alt="Logotipo PetSPA ProCare" class="petspa-brand-logo" width="92" height="92" loading="lazy">
+          </picture>
+          <div class="petspa-brand-text">
+            <span class="badge" style="background: rgba(0, 191, 216, 0.2); color: var(--turquoise); font-size: 0.82rem; margin-bottom: 10px;">Linha Profissional PetSPA ProCare</span>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.85rem; color: #fff; margin-bottom: 12px;">
+              Cosméticos de Alta Performance Usados em Nossos Banhos
+            </h3>
+            <p style="color: rgba(255,255,255,0.88); font-size: 0.96rem; max-width: 740px; margin: 0 auto 12px; line-height: 1.75;">
+              A <strong>PetSPA</strong> é uma marca profissional de cuidados para pets, desenvolvida para promover higiene, hidratação, nutrição, restauração e beleza da pelagem. Com produtos de alta performance, oferece resultados de qualidade e bem-estar em cada banho.
+            </p>
+            <span style="display: inline-flex; align-items: center; gap: 8px; color: var(--lime); font-size: 0.85rem; font-weight: 600;">
+              <i class="fas fa-hand-pointer"></i> Toque em qualquer produto para ver em detalhes para que serve
+            </span>
+          </div>
+        </div>
       </div>
 
       <div class="products-grid stagger-parent">
@@ -2128,7 +2158,10 @@
       <img id="productModalImg" src="" alt="Produto PetSPA ProCare">
     </div>
     <div class="product-modal-content-col">
-      <span class="badge" id="productModalBadge" style="background: rgba(0, 191, 216, 0.2); color: var(--turquoise); align-self: flex-start; margin-bottom: 12px; font-size: 0.78rem;"></span>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+        <img src="images/petspa-logo.webp" alt="PetSPA" style="width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid rgba(0, 191, 216, 0.4); background: #09202E;">
+        <span class="badge" id="productModalBadge" style="background: rgba(0, 191, 216, 0.2); color: var(--turquoise); font-size: 0.78rem;"></span>
+      </div>
       <h3 id="productModalTitle" style="font-family: 'Playfair Display', serif; font-size: 1.85rem; margin-bottom: 4px; color: #fff;"></h3>
       <div id="productModalCategory" style="color: var(--lime); font-size: 0.88rem; font-weight: 600; margin-bottom: 18px;"></div>
       
