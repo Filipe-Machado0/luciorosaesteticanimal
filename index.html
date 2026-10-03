@@ -175,17 +175,16 @@
       gap: 16px;
       margin-bottom: 24px;
     }
-    .petspa-brand-logo {
-      width: 92px;
-      height: 92px;
-      border-radius: 50%;
-      border: 3px solid rgba(0, 191, 216, 0.5);
-      box-shadow: 0 0 25px rgba(0, 191, 216, 0.35);
-      transition: transform 0.4s ease;
-      background: #09202E;
+    .petspa-brand-logo-transp {
+      width: 220px;
+      height: auto;
+      max-width: 85%;
+      filter: drop-shadow(0 4px 18px rgba(0, 191, 216, 0.25));
+      transition: transform 0.35s ease;
+      display: inline-block;
     }
-    .petspa-brand-logo:hover {
-      transform: scale(1.08) rotate(5deg);
+    .petspa-brand-logo-transp:hover {
+      transform: scale(1.05);
     }
     .products-grid {
       display: grid;
@@ -1899,8 +1898,8 @@
       <div class="tc">
         <div class="petspa-brand-header">
           <picture>
-            <source srcset="images/petspa-logo.webp" type="image/webp">
-            <img src="images/petspa-logo.png" alt="Logotipo PetSPA ProCare" class="petspa-brand-logo" width="92" height="92" loading="lazy">
+            <source srcset="images/petspa-logo-transp.webp" type="image/webp">
+            <img src="images/petspa-logo-transp.png" alt="Logotipo PetSPA ProCare" class="petspa-brand-logo-transp" width="220" height="68" loading="lazy">
           </picture>
           <div class="petspa-brand-text">
             <span class="badge" style="background: rgba(0, 191, 216, 0.2); color: var(--turquoise); font-size: 0.82rem; margin-bottom: 10px;">Linha Profissional PetSPA ProCare</span>
@@ -2223,8 +2222,8 @@
       <img id="productModalImg" src="" alt="Produto PetSPA ProCare">
     </div>
     <div class="product-modal-content-col">
-      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-        <img src="images/petspa-logo.webp" alt="PetSPA" style="width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid rgba(0, 191, 216, 0.4); background: #09202E;">
+      <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px; flex-wrap: wrap;">
+        <img src="images/petspa-logo-transp.webp" alt="PetSPA ProCare" style="height: 26px; width: auto; filter: drop-shadow(0 2px 8px rgba(0, 191, 216, 0.3));">
         <span class="badge" id="productModalBadge" style="background: rgba(0, 191, 216, 0.2); color: var(--turquoise); font-size: 0.78rem;"></span>
       </div>
       <h3 id="productModalTitle" style="font-family: 'Playfair Display', serif; font-size: 1.85rem; margin-bottom: 4px; color: #fff;"></h3>
