@@ -161,6 +161,223 @@
     .prod-feature-card i { font-size: 2.2rem; color: var(--turquoise); margin-bottom: 14px; display: block; }
     .prod-feature-card strong { display: block; color: #fff; font-size: 0.94rem; margin-bottom: 6px; }
     .prod-feature-card span { font-size: 0.8rem; color: rgba(255,255,255,0.7); line-height: 1.5; display: block; }
+
+    /* VITRINE DE PRODUTOS PROFISSIONAIS PETSPA PROCARE */
+    .products-showcase {
+      margin-top: 56px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      margin-top: 32px;
+    }
+    .product-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 18px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--turquoise), var(--lime));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(0, 191, 216, 0.5);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 24px rgba(0, 191, 216, 0.15);
+    }
+    .product-card:hover::before {
+      opacity: 1;
+    }
+    .product-card-img-wrap {
+      width: 100%;
+      aspect-ratio: 4 / 4.8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #081C26;
+      position: relative;
+    }
+    .product-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-card-img-wrap img {
+      transform: scale(1.06);
+    }
+    .product-card-hover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 45, 61, 0.7);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .product-card:hover .product-card-hover-overlay {
+      opacity: 1;
+    }
+    .product-card-hover-overlay span {
+      background: var(--turquoise);
+      color: #fff;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    }
+    .product-card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .product-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .product-card-desc {
+      font-size: 0.83rem;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.5;
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+    .product-card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--turquoise);
+      border: 1px solid rgba(0, 191, 216, 0.4);
+      padding: 6px 12px;
+      border-radius: 50px;
+      transition: all 0.25s ease;
+      background: rgba(0, 191, 216, 0.08);
+      width: 100%;
+      justify-content: center;
+    }
+    .product-card:hover .product-card-btn {
+      background: var(--turquoise);
+      color: #fff;
+      border-color: var(--turquoise);
+    }
+
+    /* MODAL DE PRODUTO */
+    .product-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 28, 38, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .product-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .product-modal-dialog {
+      background: linear-gradient(145deg, #0F384C 0%, #0D2D3D 100%);
+      border: 1.5px solid rgba(0, 191, 216, 0.4);
+      border-radius: 24px;
+      max-width: 720px;
+      width: 100%;
+      max-height: 90vh;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+      position: relative;
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      overflow: hidden;
+      animation: modalScaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .product-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.45);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.2s ease;
+    }
+    .product-modal-close:hover {
+      background: var(--orange);
+      transform: rotate(90deg);
+    }
+    .product-modal-img-col {
+      background: #081F2C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .product-modal-img-col img {
+      max-width: 100%;
+      max-height: 320px;
+      object-fit: contain;
+      border-radius: 12px;
+      filter: drop-shadow(0 10px 24px rgba(0,0,0,0.5));
+    }
+    .product-modal-content-col {
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #fff;
+    }
+
     /* COURSE */
     .course { background: linear-gradient(135deg, var(--orange) 0%, #FF8C00 100%); color: var(--white); position: relative; overflow: hidden; padding: 80px 0; width: 100%; }
     .course-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; position: relative; z-index: 1; width: 100%; min-width: 0; }
@@ -652,6 +869,7 @@
       .hero-btns { justify-content: center; }
       .hero-stats { max-width: 520px; margin: 0 auto; }
       .products-inner { grid-template-columns: 1fr; gap: 36px; }
+      .products-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
       .course-inner { grid-template-columns: 1fr; gap: 40px; }
       .about-inner { grid-template-columns: 1fr; text-align: center; gap: 36px; }
       .about-credentials { text-align: left; max-width: 500px; margin: 26px auto; }
@@ -810,6 +1028,16 @@
         padding: 16px 24px;
       }
 
+      /* Vitrine e Modal de Produtos no Mobile */
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .product-card { padding: 14px 10px; }
+      .product-card-title { font-size: 1.05rem; }
+      .product-card-desc { font-size: 0.78rem; }
+      .product-modal-dialog { grid-template-columns: 1fr; max-height: 88vh; overflow-y: auto; }
+      .product-modal-img-col { padding: 20px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .product-modal-img-col img { max-height: 220px; }
+      .product-modal-content-col { padding: 24px 20px; }
+
       /* Rodapé */
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-bottom {
@@ -848,6 +1076,7 @@
         gap: 10px;
       }
       .hero-logo-box { width: 220px; height: 220px; }
+      .products-grid { grid-template-columns: 1fr; gap: 16px; }
       
       /* Stats do Hero em 3 colunas compactas e 100% legíveis */
       .hero-stats {
@@ -1592,6 +1821,106 @@
         </div>
       </div>
     </div>
+
+    <!-- VITRINE DE PRODUTOS PROFISSIONAIS PETSPA PROCARE -->
+    <div class="products-showcase reveal">
+      <div class="tc">
+        <span class="badge" style="background: rgba(0, 191, 216, 0.2); color: var(--turquoise); font-size: 0.82rem;">Linha Profissional PetSPA ProCare</span>
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #fff; margin-top: 10px; margin-bottom: 8px;">
+          Cosméticos de Alta Performance Usados em Nossos Banhos
+        </h3>
+        <p style="color: rgba(255,255,255,0.75); font-size: 0.95rem; max-width: 620px; margin: 0 auto;">
+          Toque em qualquer produto para ver em detalhes como ele cuida e transforma a pelagem do seu pet.
+        </p>
+      </div>
+
+      <div class="products-grid stagger-parent">
+        <!-- 1. Platinum Pro -->
+        <div class="product-card" onclick="openProductModal('platinum-pro')">
+          <div class="product-card-img-wrap">
+            <picture>
+              <source srcset="images/produto-platinum-pro.webp" type="image/webp">
+              <img src="images/produto-platinum-pro.jpg" alt="PetSPA Platinum Pro - Pelos Claros e Desamarelamento" loading="lazy">
+            </picture>
+            <div class="product-card-hover-overlay">
+              <span><i class="fas fa-search-plus"></i> Ver Detalhes</span>
+            </div>
+          </div>
+          <span class="product-card-tag" style="color: #D68FFF;">Pelos Claros</span>
+          <h4 class="product-card-title">Platinum Pro</h4>
+          <p class="product-card-desc">Deixa os pelos do seu cão mais branquinhos e auxilia no desamarelamento.</p>
+          <span class="product-card-btn"><i class="fas fa-info-circle"></i> Ver para que serve</span>
+        </div>
+
+        <!-- 2. Amino Pro -->
+        <div class="product-card" onclick="openProductModal('amino-pro')">
+          <div class="product-card-img-wrap">
+            <picture>
+              <source srcset="images/produto-amino-pro.webp" type="image/webp">
+              <img src="images/produto-amino-pro.jpg" alt="PetSPA Amino Pro - Restauração de Pelos Danificados" loading="lazy">
+            </picture>
+            <div class="product-card-hover-overlay">
+              <span><i class="fas fa-search-plus"></i> Ver Detalhes</span>
+            </div>
+          </div>
+          <span class="product-card-tag" style="color: #00D2FF;">Restauração</span>
+          <h4 class="product-card-title">Amino Pro</h4>
+          <p class="product-card-desc">Restaura os pelos danificados, deixando-os mais macios e saudáveis.</p>
+          <span class="product-card-btn"><i class="fas fa-info-circle"></i> Ver para que serve</span>
+        </div>
+
+        <!-- 3. Odor Control -->
+        <div class="product-card" onclick="openProductModal('odor-control')">
+          <div class="product-card-img-wrap">
+            <picture>
+              <source srcset="images/produto-odor-control.webp" type="image/webp">
+              <img src="images/produto-odor-control.jpg" alt="PetSPA Odor Control - Neutralizador de Odores" loading="lazy">
+            </picture>
+            <div class="product-card-hover-overlay">
+              <span><i class="fas fa-search-plus"></i> Ver Detalhes</span>
+            </div>
+          </div>
+          <span class="product-card-tag" style="color: var(--lime);">Antiodor</span>
+          <h4 class="product-card-title">Odor Control</h4>
+          <p class="product-card-desc">Remove sujeiras e ajuda a neutralizar os maus odores do seu cão.</p>
+          <span class="product-card-btn"><i class="fas fa-info-circle"></i> Ver para que serve</span>
+        </div>
+
+        <!-- 4. Nutri Pro -->
+        <div class="product-card" onclick="openProductModal('nutri-pro')">
+          <div class="product-card-img-wrap">
+            <picture>
+              <source srcset="images/produto-nutri-pro.webp" type="image/webp">
+              <img src="images/produto-nutri-pro.jpg" alt="PetSPA Nutri Pro - Nutrição e Alinhamento" loading="lazy">
+            </picture>
+            <div class="product-card-hover-overlay">
+              <span><i class="fas fa-search-plus"></i> Ver Detalhes</span>
+            </div>
+          </div>
+          <span class="product-card-tag" style="color: #FF9B42;">Nutrição</span>
+          <h4 class="product-card-title">Nutri Pro</h4>
+          <p class="product-card-desc">Repõe nutrientes, deixando os pelos mais alinhados e nutridos.</p>
+          <span class="product-card-btn"><i class="fas fa-info-circle"></i> Ver para que serve</span>
+        </div>
+
+        <!-- 5. Hidrat Pro -->
+        <div class="product-card" onclick="openProductModal('hidrat-pro')">
+          <div class="product-card-img-wrap">
+            <picture>
+              <source srcset="images/produto-hidrat-pro.webp" type="image/webp">
+              <img src="images/produto-hidrat-pro.jpg" alt="PetSPA Hidrat Pro - Hidratação Intensa e Proteção" loading="lazy">
+            </picture>
+            <div class="product-card-hover-overlay">
+              <span><i class="fas fa-search-plus"></i> Ver Detalhes</span>
+            </div>
+          </div>
+          <span class="product-card-tag" style="color: #00E5FF;">Hidratação</span>
+          <h4 class="product-card-title">Hidrat Pro</h4>
+          <p class="product-card-desc">Promove hidratação intensa, deixando os pelos mais macios e protegidos.</p>
+          <span class="product-card-btn"><i class="fas fa-info-circle"></i> Ver para que serve</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1791,6 +2120,32 @@
   <img id="testimonialModalImg" src="" alt="Print do Depoimento Real Lúcio Rosa" onclick="event.stopPropagation()">
 </div>
 
+<!-- MODAL DE DETALHES DO PRODUTO (PETSPA PROCARE) -->
+<div id="productModal" class="product-modal" onclick="closeProductModal()" role="dialog" aria-modal="true" aria-label="Detalhes do Produto">
+  <div class="product-modal-dialog" onclick="event.stopPropagation()">
+    <span class="product-modal-close" onclick="closeProductModal()" aria-label="Fechar">&times;</span>
+    <div class="product-modal-img-col">
+      <img id="productModalImg" src="" alt="Produto PetSPA ProCare">
+    </div>
+    <div class="product-modal-content-col">
+      <span class="badge" id="productModalBadge" style="background: rgba(0, 191, 216, 0.2); color: var(--turquoise); align-self: flex-start; margin-bottom: 12px; font-size: 0.78rem;"></span>
+      <h3 id="productModalTitle" style="font-family: 'Playfair Display', serif; font-size: 1.85rem; margin-bottom: 4px; color: #fff;"></h3>
+      <div id="productModalCategory" style="color: var(--lime); font-size: 0.88rem; font-weight: 600; margin-bottom: 18px;"></div>
+      
+      <div style="background: rgba(255,255,255,0.06); border-left: 3px solid var(--turquoise); padding: 14px 16px; border-radius: 0 10px 10px 0; margin-bottom: 16px;">
+        <strong style="color: #fff; display: block; font-size: 0.84rem; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.6px;">Para que serve:</strong>
+        <p id="productModalDesc" style="color: #fff; font-size: 0.98rem; font-weight: 600; line-height: 1.5; margin: 0;"></p>
+      </div>
+
+      <p id="productModalExtra" style="color: rgba(255,255,255,0.78); font-size: 0.88rem; line-height: 1.6; margin-bottom: 24px;"></p>
+
+      <a id="productModalWaBtn" href="#" class="btn btn-lime" target="_blank" rel="noopener" style="font-size: 0.92rem; padding: 13px 22px; width: 100%; text-align: center; justify-content: center;">
+        <i class="fab fa-whatsapp"></i> Quero esse tratamento para meu pet
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- SCRIPTS JAVASCRIPT -->
 <script>
   // Efeito scrolled na Navbar
@@ -1832,8 +2187,83 @@
     modal.classList.remove('active');
     document.body.style.overflow = '';
   }
+
+  // Modal de Detalhes dos Produtos PetSPA ProCare
+  const productData = {
+    'platinum-pro': {
+      title: 'Platinum Pro',
+      category: 'Linha Pelos Claros & Realce Nobre',
+      badge: 'PetSPA ProCare · Especial Pelagem Clara',
+      desc: 'Deixa os pelos do seu cão mais branquinhos e auxilia no desamarelamento.',
+      extra: 'Com extrato antioxidante de blueberry e ativos clareadores ópticos seguros. Realça o branco natural da pelagem sem agredir a derme ou ressecar os fios.',
+      img: 'images/produto-platinum-pro.jpg'
+    },
+    'amino-pro': {
+      title: 'Amino Pro',
+      category: 'Linha Restauração & Reconstrução',
+      badge: 'PetSPA ProCare · Complexo de Aminoácidos',
+      desc: 'Restaura os pelos danificados, deixando-os mais macios e saudáveis.',
+      extra: 'Formulado com aminoácidos essenciais e vitamina B5. Repara a estrutura interna da pelagem danificada por atrito, nós ou calor, devolvendo vitalidade e maleabilidade.',
+      img: 'images/produto-amino-pro.jpg'
+    },
+    'odor-control': {
+      title: 'Odor Control',
+      category: 'Linha Neutralização & Limpeza Profunda',
+      badge: 'PetSPA ProCare · Inibidor Enzimático',
+      desc: 'Remove sujeiras e ajuda a neutralizar os maus odores do seu cão.',
+      extra: 'Ação enzimática concentrada que neutraliza odores indesejados na raiz dos fios, promovendo assepsia completa e um perfume fresco e duradouro.',
+      img: 'images/produto-odor-control.jpg'
+    },
+    'nutri-pro': {
+      title: 'Nutri Pro',
+      category: 'Linha Nutrição & Alinhamento Cuticular',
+      badge: 'PetSPA ProCare · Reposição Lipídica',
+      desc: 'Repõe nutrientes, deixando os pelos mais alinhados e nutridos.',
+      extra: 'Concentrado de ômegas 3, 6 e 9 com tecnologia nano repair. Fecha as cutículas dos fios, proporcionando brilho radiante, alinhamento perfeito e caimento sedoso.',
+      img: 'images/produto-nutri-pro.jpg'
+    },
+    'hidrat-pro': {
+      title: 'Hidrat Pro',
+      category: 'Linha Hidratação Intensa & Proteção',
+      badge: 'PetSPA ProCare · Ácido Hialurônico & Quinoa',
+      desc: 'Promove hidratação intensa, deixando os pelos mais macios e protegidos.',
+      extra: 'Formulação de ponta com ácido hialurônico e proteína de quinoa. Retém a umidade profunda da pelagem, prevenindo nós rebeldes e garantindo toque aveludado.',
+      img: 'images/produto-hidrat-pro.jpg'
+    }
+  };
+
+  function openProductModal(key) {
+    const item = productData[key];
+    if (!item) return;
+
+    document.getElementById('productModalImg').src = item.img;
+    document.getElementById('productModalTitle').innerText = item.title;
+    document.getElementById('productModalCategory').innerText = item.category;
+    document.getElementById('productModalBadge').innerText = item.badge;
+    document.getElementById('productModalDesc').innerText = item.desc;
+    document.getElementById('productModalExtra').innerText = item.extra;
+    
+    const waText = encodeURIComponent(`Olá Lúcio! Vi no site o produto ${item.title} ("${item.desc}") e gostaria de agendar um atendimento para o meu pet com esse tratamento! 🐾✨`);
+    document.getElementById('productModalWaBtn').href = `https://wa.me/5515997830063?text=${waText}`;
+
+    const modal = document.getElementById('productModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProductModal() {
+    const modal = document.getElementById('productModal');
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeTestimonialModal();
+    if (e.key === 'Escape') {
+      closeTestimonialModal();
+      closeProductModal();
+    }
   });
 
   // Lógica do Carrossel de Depoimentos
