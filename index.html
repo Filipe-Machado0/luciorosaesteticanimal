@@ -754,25 +754,94 @@
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     }
     .testimonial-trust-box {
-      margin-top: 45px;
-      background: linear-gradient(135deg, rgba(0,191,216,0.08) 0%, rgba(141,198,63,0.08) 100%);
-      border: 1.5px dashed var(--turquoise);
-      border-radius: var(--radius);
-      padding: 30px 24px;
-      text-align: center;
+      margin-top: 48px;
+      background: linear-gradient(135deg, #0D2D3D 0%, #0F3D52 50%, #07707E 100%);
+      border: 1.5px solid rgba(0, 191, 216, 0.45);
+      border-radius: 24px;
+      padding: 32px 36px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.18), 0 0 30px rgba(0,191,216,0.12);
+      position: relative;
+      overflow: hidden;
     }
-    .testimonial-trust-box h3 {
-      font-size: 1.35rem;
-      color: var(--navy);
+    .testimonial-trust-box::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 100%;
+      background: radial-gradient(circle, rgba(141,198,63,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .trust-box-inner {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 36px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .trust-box-photo-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .trust-box-photo {
+      width: 160px;
+      height: auto;
+      max-height: 240px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 24px rgba(0,0,0,0.5));
+      transition: transform 0.4s ease;
+    }
+    .trust-box-photo-col:hover .trust-box-photo {
+      transform: scale(1.05);
+    }
+    .trust-box-badge {
+      background: rgba(8, 28, 38, 0.92);
+      border: 1px solid rgba(0, 191, 216, 0.5);
+      border-radius: 50px;
+      padding: 6px 14px;
+      color: #fff;
+      font-size: 0.74rem;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-top: -12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
-    .testimonial-trust-box p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      max-width: 580px;
-      margin: 0 auto 20px;
-      line-height: 1.6;
+    .trust-box-text-col {
+      color: #fff;
+      text-align: left;
+    }
+    .trust-box-stars {
+      color: #FFB800;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+    .trust-box-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .trust-box-desc {
+      font-size: 0.94rem;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.7;
+      margin-bottom: 22px;
+      max-width: 650px;
+    }
+    .trust-box-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
     /* Modal de Zoom dos Prints */
     .testimonial-modal {
@@ -1107,7 +1176,13 @@
       .product-modal-dialog { grid-template-columns: 1fr; max-height: 88vh; overflow-y: auto; }
       .product-modal-img-col { padding: 20px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
       .product-modal-img-col img { max-height: 220px; }
-      .product-modal-content-col { padding: 24px 20px; }
+      /* Trust Box de Depoimentos no Mobile */
+      .testimonial-trust-box { padding: 26px 18px; text-align: center; }
+      .trust-box-inner { grid-template-columns: 1fr; gap: 18px; text-align: center; }
+      .trust-box-photo { width: 140px; max-height: 200px; }
+      .trust-box-text-col { text-align: center; }
+      .trust-box-desc { font-size: 0.88rem; margin-left: auto; margin-right: auto; }
+      .trust-box-actions { justify-content: center; }
 
       /* Rodapé */
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
@@ -1762,14 +1837,32 @@
       <span class="dot" onclick="goToSlide(4)"></span>
     </div>
 
-    <!-- BOX DE CONFIANÇA & CTA -->
+    <!-- BOX DE CONFIANÇA & CTA COM FOTO DO TROFÉU -->
     <div class="testimonial-trust-box reveal-scale">
-      <div style="font-size: 2rem; margin-bottom: 8px;">🐾 ✨ 🐾</div>
-      <h3>Seu filho de 4 patas também merece esse cuidado VIP</h3>
-      <p>Agende com hora marcada e proporcione uma experiência sem traumas, com produtos de alta performance e muito amor.</p>
-      <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Vi%20os%20depoimentos%20no%20site%20e%20quero%20agendar%20um%20atendimento%20especial%20para%20o%20meu%20pet.%20%F0%9F%90%BE" class="btn btn-lime" style="font-size: 1rem; padding: 15px 32px;" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i> Quero Agendar para o Meu Pet
-      </a>
+      <div class="trust-box-inner">
+        <div class="trust-box-photo-col">
+          <picture>
+            <source srcset="images/lucio-trofeu.webp" type="image/webp">
+            <img src="images/lucio-trofeu.png" alt="Lúcio Rosa - Prêmio Excelência em Estética Animal" class="trust-box-photo" width="180" height="270" loading="lazy">
+          </picture>
+          <div class="trust-box-badge">
+            <i class="fas fa-trophy" style="color: #FFB800;"></i> Esteticista Premiado
+          </div>
+        </div>
+        <div class="trust-box-text-col">
+          <div class="trust-box-stars">★★★★★</div>
+          <span class="badge lime" style="margin-bottom: 10px; font-size: 0.78rem;">Padrão Lúcio Rosa</span>
+          <h3 class="trust-box-title">Excelência Comprovada em Cada Atendimento</h3>
+          <p class="trust-box-desc">
+            Cada mensagem e carinho dos tutores acima é fruto de mais de 27 anos de estudo, técnica apurada e dedicação incondicional aos animais. Seu filho de quatro patas merece um atendimento calmo, sem gaiolas, com hora marcada e cosméticos nobres.
+          </p>
+          <div class="trust-box-actions">
+            <a href="https://wa.me/5515997830063?text=Ol%C3%A1%20L%C3%BAcio%21%20Vi%20os%20depoimentos%20no%20site%20e%20quero%20agendar%20um%20atendimento%20especial%20para%20o%20meu%20pet.%20%F0%9F%90%BE" class="btn btn-lime" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp"></i> Quero Agendar com o Lúcio
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
