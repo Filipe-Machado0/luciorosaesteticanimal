@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academia de Estética Animal Lúcio Rosa | Portal do Aluno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --navy: #07151D;
+      --navy-card: #0D2D3D;
+      --navy-lighter: #133E53;
+      --navy-border: #1B4D66;
+      --turquoise: #00BFD8;
+      --turquoise-glow: rgba(0, 191, 216, 0.25);
+      --gold: #FFB800;
+      --gold-glow: rgba(255, 184, 0, 0.25);
+      --lime: #8DC63F;
+      --text: #F1F5F9;
+      --text-muted: #94A3B8;
+      --bg: #040D12;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+    body { background-color: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
+
+    /* TOP BAR */
+    header.platform-header {
+      background: rgba(13, 45, 61, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--navy-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--turquoise);
+      object-fit: cover;
+    }
+    .brand-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .brand-title span { color: var(--turquoise); }
+    .brand-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      background: linear-gradient(135deg, var(--gold), #E67E22);
+      color: #07151D;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    .header-center-info {
+      display: none;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    @media (min-width: 900px) {
+      .header-center-info { display: flex; }
+    }
+
+    .progress-pill {
+      background: var(--navy-lighter);
+      padding: 6px 14px;
+      border-radius: 30px;
+      border: 1px solid var(--navy-border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+    }
+    .progress-bar-wrap {
+      width: 120px;
+      height: 7px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 35%;
+      background: linear-gradient(90deg, var(--turquoise), var(--lime));
+      border-radius: 10px;
+      transition: width 0.4s ease;
+    }
+
+    .header-user-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-site-return {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--navy-border);
+      transition: var(--transition);
+    }
+    .btn-site-return:hover {
+      color: var(--turquoise);
+      border-color: var(--turquoise);
+      background: rgba(0, 191, 216, 0.08);
+    }
+    .user-avatar-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--turquoise), var(--navy-lighter));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #fff;
+      border: 2px solid var(--navy-border);
+    }
+
+    /* MAIN CONTAINER */
+    .platform-layout {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 1700px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 1.25rem;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 1100px) {
+      .platform-layout {
+        grid-template-columns: 1fr 410px;
+        padding: 1.5rem 2rem;
+      }
+    }
+
+    /* MAIN STAGE (PLAYER & LESSON CONTENT) */
+    .stage-area {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .video-viewport-wrapper {
+      position: relative;
+      background: #000;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--navy-border);
+      aspect-ratio: 16 / 9;
+    }
+
+    /* SIMULATED VEO 3 ENGINE OVERLAY */
+    .simulated-stage-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(13, 45, 61, 0.4) 0%, #030a0e 95%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .video-hero-backdrop {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+      filter: saturate(1.2) contrast(1.1);
+      transition: opacity 0.4s ease;
+    }
+
+    .ambient-glow-circle {
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--turquoise-glow) 0%, transparent 70%);
+      pointer-events: none;
+      animation: pulseGlow 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: scale(0.9); opacity: 0.5; }
+      100% { transform: scale(1.15); opacity: 0.85; }
+    }
+
+    .veo3-hud-tag {
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(7, 21, 29, 0.85);
+      border: 1px solid rgba(0, 191, 216, 0.4);
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+    .hud-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--turquoise);
+      box-shadow: 0 0 10px var(--turquoise);
+      animation: blinkDot 1.6s infinite;
+    }
+    @keyframes blinkDot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .resolution-badge {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      z-index: 10;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid var(--navy-border);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+
+    /* PLAYER CONTROLS & CENTER PLAY */
+    .center-play-trigger {
+      position: relative;
+      z-index: 10;
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--turquoise), #0099ad);
+      color: #07151D;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      cursor: pointer;
+      box-shadow: 0 0 40px var(--turquoise-glow), 0 8px 24px rgba(0,0,0,0.5);
+      border: 3px solid rgba(255,255,255,0.4);
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s;
+    }
+    .center-play-trigger:hover {
+      transform: scale(1.12);
+      box-shadow: 0 0 60px rgba(0, 191, 216, 0.6), 0 12px 30px rgba(0,0,0,0.6);
+    }
+    .center-play-trigger i { margin-left: 5px; }
+
+    .playing-notice {
+      position: relative;
+      z-index: 10;
+      margin-top: 14px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.85);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* BOTTOM CONTROLS BAR */
+    .video-bottom-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 15;
+      background: linear-gradient(to top, rgba(4, 13, 18, 0.95), transparent);
+      padding: 24px 18px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .timeline-bar {
+      width: 100%;
+      height: 5px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      transition: height 0.15s ease;
+    }
+    .timeline-bar:hover { height: 8px; }
+    .timeline-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 42%;
+      background: linear-gradient(90deg, var(--turquoise), var(--gold));
+      border-radius: 5px;
+    }
+    .controls-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      font-size: 0.85rem;
+    }
+    .controls-left, .controls-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .ctrl-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .ctrl-btn:hover { color: var(--turquoise); }
+
+    /* LESSON DETAILS & INFO CARD */
+    .lesson-meta-card {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+    }
+
+    .lesson-header-action {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--navy-border);
+      padding-bottom: 1.25rem;
+    }
+    .lesson-subhead {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--turquoise);
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lesson-title-main {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+    }
+    .lesson-complete-toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 191, 216, 0.08);
+      border: 1px solid var(--turquoise);
+      color: var(--turquoise);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      user-select: none;
+    }
+    .lesson-complete-toggle.completed {
+      background: var(--lime);
+      border-color: var(--lime);
+      color: #07151D;
+    }
+    .lesson-complete-toggle:hover {
+      transform: translateY(-2px);
+    }
+
+    /* LESSON CONTENT TABS */
+    .meta-tabs-nav {
+      display: flex;
+      gap: 10px;
+      border-bottom: 1px solid var(--navy-border);
+      margin-bottom: 1.25rem;
+      overflow-x: auto;
+    }
+    .meta-tab-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .meta-tab-btn.active {
+      color: var(--turquoise);
+      border-bottom-color: var(--turquoise);
+    }
+
+    .meta-tab-pane {
+      display: none;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: #CBD5E1;
+    }
+    .meta-tab-pane.active { display: block; }
+
+    .ai-prompt-box {
+      background: rgba(7, 21, 29, 0.6);
+      border-left: 4px solid var(--turquoise);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 1rem 0;
+      font-size: 0.85rem;
+    }
+    .ai-prompt-box strong { color: var(--turquoise); }
+
+    .material-download-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 1rem;
+    }
+    .material-item {
+      background: var(--navy-lighter);
+      border: 1px solid var(--navy-border);
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .material-item:hover {
+      border-color: var(--turquoise);
+      transform: translateX(4px);
+    }
+    .material-item i {
+      font-size: 1.4rem;
+      color: var(--gold);
+    }
+
+    /* RIGHT SIDEBAR (MODULES & LESSONS PLAYLIST) */
+    .sidebar-playlist {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      max-height: calc(100vh - 120px);
+      position: sticky;
+      top: 85px;
+      overflow: hidden;
+    }
+
+    .playlist-header {
+      padding: 1.25rem;
+      border-bottom: 1px solid var(--navy-border);
+      background: rgba(7, 21, 29, 0.4);
+    }
+    .playlist-header h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .playlist-header p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .modules-accordion {
+      overflow-y: auto;
+      flex: 1;
+      padding: 0.5rem;
+    }
+
+    /* CUSTOM SCROLLBAR */
+    .modules-accordion::-webkit-scrollbar { width: 6px; }
+    .modules-accordion::-webkit-scrollbar-thumb { background: var(--navy-lighter); border-radius: 4px; }
+
+    .module-group {
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      background: rgba(7, 21, 29, 0.25);
+      overflow: hidden;
+    }
+
+    .module-toggle {
+      width: 100%;
+      padding: 12px 14px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .module-toggle:hover { background: rgba(0, 191, 216, 0.05); }
+    .module-toggle .mod-info { display: flex; align-items: center; gap: 10px; }
+    .module-toggle .mod-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      background: var(--navy-lighter);
+      padding: 2px 7px;
+      border-radius: 4px;
+      color: var(--turquoise);
+    }
+    .module-toggle i.chevron {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+    .module-group.open .module-toggle i.chevron {
+      transform: rotate(180deg);
+    }
+
+    .module-lessons-list {
+      display: none;
+      border-top: 1px solid var(--navy-border);
+      background: #061117;
+    }
+    .module-group.open .module-lessons-list { display: block; }
+
+    /* LESSON ROW / MINI PLAYER ITEM */
+    .lesson-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(27, 77, 102, 0.35);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+    .lesson-item:last-child { border-bottom: none; }
+    .lesson-item:hover {
+      background: rgba(0, 191, 216, 0.08);
+    }
+    .lesson-item.active {
+      background: rgba(0, 191, 216, 0.15);
+      border-left: 4px solid var(--turquoise);
+    }
+
+    /* MINI PLAYER THUMBNAIL */
+    .miniplayer-thumb {
+      position: relative;
+      width: 72px;
+      height: 48px;
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #000;
+      border: 1px solid var(--navy-border);
+    }
+    .miniplayer-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.75;
+      transition: transform 0.3s ease;
+    }
+    .lesson-item:hover .miniplayer-thumb img {
+      transform: scale(1.08);
+      opacity: 0.95;
+    }
+    .miniplayer-thumb .mini-play-icon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      font-size: 0.85rem;
+      transition: transform 0.2s;
+    }
+    .lesson-item.active .miniplayer-thumb .mini-play-icon {
+      color: var(--turquoise);
+      background: rgba(0, 191, 216, 0.3);
+    }
+    .miniplayer-thumb .duration-tag {
+      position: absolute;
+      bottom: 2px;
+      right: 3px;
+      background: rgba(0,0,0,0.8);
+      font-size: 0.58rem;
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .lesson-item-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .lesson-item-title {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #E2E8F0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 3px;
+    }
+    .lesson-item.active .lesson-item-title {
+      color: var(--turquoise);
+      font-weight: 700;
+    }
+    .lesson-item-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+    .tag-veo3 {
+      font-size: 0.62rem;
+      background: rgba(0, 191, 216, 0.15);
+      color: var(--turquoise);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    .lesson-check-status {
+      font-size: 0.95rem;
+      color: var(--navy-border);
+      cursor: pointer;
+      padding: 4px;
+      transition: color 0.2s;
+    }
+    .lesson-check-status.done {
+      color: var(--lime);
+    }
+
+    /* FOOTER BANNER / COMMUNITY */
+    .vip-community-bar {
+      margin-top: 1.5rem;
+      background: linear-gradient(135deg, #133E53, #07151D);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .vip-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .vip-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    .btn-vip-chat {
+      background: #25D366;
+      color: #07151D;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .btn-vip-chat:hover {
+      background: #20BA5A;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+    }
+
+    /* PROMISE REINFORCEMENT BANNER */
+    .promise-hero-banner {
+      background: linear-gradient(90deg, rgba(0, 191, 216, 0.1), rgba(255, 184, 0, 0.05));
+      border: 1px solid rgba(0, 191, 216, 0.25);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .promise-hero-banner i {
+      font-size: 1.6rem;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .promise-hero-banner p {
+      font-size: 0.85rem;
+      color: #E2E8F0;
+      line-height: 1.5;
+    }
+    .promise-hero-banner strong {
+      color: var(--turquoise);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HEADER -->
+  <header class="platform-header">
+    <a href="index.html" class="brand-area">
+      <img src="images/logo.webp" alt="Lúcio Rosa" class="brand-logo" onerror="this.src='images/logo.jpg'">
+      <div>
+        <div class="brand-title">Academia <span>Lúcio Rosa</span></div>
+        <span class="brand-badge"><i class="fa-solid fa-graduation-cap"></i> Aluno VIP</span>
+      </div>
+    </a>
+
+    <div class="header-center-info">
+      <div class="progress-pill">
+        <span style="color: var(--text-muted); font-size: 0.75rem;">Progresso Geral:</span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" id="topProgressBar" style="width: 25%;"></div>
+        </div>
+        <strong id="topProgressPercent" style="color: var(--turquoise); font-size: 0.8rem;">25%</strong>
+      </div>
+    </div>
+
+    <div class="header-user-actions">
+      <a href="index.html" class="btn-site-return" title="Voltar ao Site Principal">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Voltar ao Site</span>
+      </a>
+      <div class="user-avatar-badge" title="Felipe Machado - Aluno">FM</div>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="platform-layout">
+
+    <!-- LEFT: PLAYER AND LESSON DETAILS -->
+    <div class="stage-area">
+
+      <!-- PROMISE BANNER -->
+      <div class="promise-hero-banner">
+        <i class="fa-solid fa-award"></i>
+        <div>
+          <p><strong>A promessa que guia sua formação:</strong> Aprenda a faturar alto na estética pet dominando técnicas sem traumas, acabamento tesourado impecável e o nicho mais lucrativo: <strong>Spitz Alemão e pelagens exigentes</strong>.</p>
+        </div>
+      </div>
+
+      <!-- VIDEO PLAYER STAGE -->
+      <div class="video-viewport-wrapper" id="videoPlayerBox">
+        
+        <div class="simulated-stage-bg">
+          <img src="images/pet5.webp" alt="Preview da Aula" class="video-hero-backdrop" id="playerBackdrop" onerror="this.src='images/hero-lucio.webp'">
+          
+          <div class="ambient-glow-circle"></div>
+
+          <!-- HUD TAGS -->
+          <div class="veo3-hud-tag">
+            <div class="hud-dot"></div>
+            <span>IA Veo 3 Cinematic 4K</span>
+          </div>
+
+          <div class="resolution-badge">
+            <i class="fa-solid fa-film"></i> 60 FPS ULTRA-HD
+          </div>
+
+          <!-- BIG PLAY BUTTON -->
+          <div class="center-play-trigger" id="centerPlayBtn" onclick="toggleSimulatedPlay()">
+            <i class="fa-solid fa-play" id="centerPlayIcon"></i>
+          </div>
+
+          <div class="playing-notice" id="playStatusNotice">
+            <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--turquoise);"></i>
+            <span>Clique para reproduzir a demonstração da aula gerada em Veo 3</span>
+          </div>
+
+          <!-- BOTTOM PLAYER BAR -->
+          <div class="video-bottom-bar">
+            <div class="timeline-bar" onclick="seekTimeline(event)">
+              <div class="timeline-progress" id="timelineFill" style="width: 32%;"></div>
+            </div>
+            <div class="controls-row">
+              <div class="controls-left">
+                <button class="ctrl-btn" onclick="toggleSimulatedPlay()"><i class="fa-solid fa-play" id="bottomPlayIcon"></i></button>
+                <button class="ctrl-btn" onclick="restartSimulatedPlay()"><i class="fa-solid fa-rotate-left"></i></button>
+                <span id="timeDisplay" style="font-size: 0.78rem; color: #CBD5E1;">04:18 / 13:45</span>
+              </div>
+              <div class="controls-right">
+                <span class="tag-veo3"><i class="fa-solid fa-sparkles"></i> Produção Veo 3</span>
+                <button class="ctrl-btn" title="Velocidade 1.5x"><i class="fa-solid fa-gauge-high"></i></button>
+                <button class="ctrl-btn" title="Tela cheia" onclick="toggleFullscreen()"><i class="fa-solid fa-expand"></i></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LESSON DETAILS CARD -->
+      <div class="lesson-meta-card">
+        
+        <div class="lesson-header-action">
+          <div>
+            <div class="lesson-subhead" id="currentModBadge">
+              <i class="fa-solid fa-folder-open"></i> Módulo 07 &bull; Especialização Spitz Alemão
+            </div>
+            <h1 class="lesson-title-main" id="currentLessonTitle">Aula 02: Padrão Comercial vs Padrão CBKC no Spitz Alemão</h1>
+          </div>
+          <button class="lesson-complete-toggle" id="btnMarkComplete" onclick="toggleCurrentComplete()">
+            <i class="fa-regular fa-circle-check"></i>
+            <span>Concluir Aula</span>
+          </button>
+        </div>
+
+        <!-- TABS -->
+        <div class="meta-tabs-nav">
+          <button class="meta-tab-btn active" onclick="switchMetaTab('resumo')"><i class="fa-solid fa-align-left"></i> Visão Geral</button>
+          <button class="meta-tab-btn" onclick="switchMetaTab('roteiro')"><i class="fa-solid fa-wand-magic-sparkles"></i> Roteiro IA (Veo 3)</button>
+          <button class="meta-tab-btn" onclick="switchMetaTab('materiais')"><i class="fa-solid fa-file-arrow-down"></i> Materiais (PDFs)</button>
+          <button class="meta-tab-btn" onclick="switchMetaTab('duvidas')"><i class="fa-solid fa-comments"></i> Dúvidas com Lúcio</button>
+        </div>
+
+        <!-- TAB: RESUMO -->
+        <div class="meta-tab-pane active" id="tab-resumo">
+          <p>Nesta aula magistral, Lúcio Rosa demonstra a anatomia da pelagem dupla do Spitz Alemão (Pomerânia). Você vai aprender por que a tosa excessiva com lâmina de máquina causa alopecia por tração e destrói a pelagem, e como a técnica 100% tesourada valoriza o corte em até <strong>R$ 150,00 por atendimento</strong>.</p>
+          
+          <div class="ai-prompt-box">
+            <strong><i class="fa-solid fa-brain"></i> Metodologia Prática Lúcio Rosa:</strong>
+            <p>"No Spitz, a tesoura não é apenas ferramenta de corte — é escultura. Apoiamos a tesoura curva no sentido natural de crescimento e moldamos a silhueta em bola de algodão preservando o subpelo térmico protetor."</p>
+          </div>
+
+          <h4 style="color: #fff; margin: 1rem 0 0.5rem; font-size: 0.95rem;">✅ O que você domina nesta aula:</h4>
+          <ul style="padding-left: 1.25rem; color: var(--text-muted); line-height: 1.8;">
+            <li>Diferença biomecânica entre tosa Boo comercial e linha CBKC de exposição.</li>
+            <li>Angulação correta da tesoura reta, curva e tubarão para não 'marcar' o pelo.</li>
+            <li>Postura anti-estresse para o animal ficar calmo sem contenção forçada.</li>
+            <li>Como precificar e vender esse serviço para donos exigentes de Boituva e região.</li>
+          </ul>
+        </div>
+
+        <!-- TAB: ROTEIRO IA VEO 3 -->
+        <div class="meta-tab-pane" id="tab-roteiro">
+          <p>Esta videoaula foi arquitetada para produção híbrida via <strong>Google Veo 3</strong> e narração real de Lúcio Rosa. Veja a estrutura dos prompts de geração visual:</p>
+          
+          <div class="ai-prompt-box">
+            <strong><i class="fa-solid fa-terminal"></i> Prompt Veo 3 [Cena 01 - Macro Pelagem]:</strong>
+            <p style="font-family: monospace; font-size: 0.8rem; margin-top: 4px; color: #7DD3FC;">
+              "Ultra-photorealistic 8k slow-motion close up of a luxurious fluffy orange Pomeranian dog fur being gently brushed with a stainless steel comb in a luxury pet salon, soft cinematic lighting, studio rim light, high-end grooming shears cutting with surgical precision, 60fps photorealism --ar 16:9"
+            </p>
+          </div>
+
+          <div class="ai-prompt-box">
+            <strong><i class="fa-solid fa-terminal"></i> Prompt Veo 3 [Cena 02 - Tosa Tesourada 360°]:</strong>
+            <p style="font-family: monospace; font-size: 0.8rem; margin-top: 4px; color: #7DD3FC;">
+              "Master pet groomer hands sculpting round fluffy spitz contours with Japanese curved scissors, smiling well-cared pomeranian looking relaxed, shallow depth of field, elegant turquoise and gold luxury pet boutique background --ar 16:9"
+            </p>
+          </div>
+        </div>
+
+        <!-- TAB: MATERIAIS -->
+        <div class="meta-tab-pane" id="tab-materiais">
+          <p>Baixe os guias de apoio e fichas práticas para consultar na sua bancada:</p>
+          <div class="material-download-list">
+            <a href="#" class="material-item" onclick="alert('Download do PDF liberado na versão final!')">
+              <i class="fa-solid fa-file-pdf"></i>
+              <div>
+                <strong>Guia Anatômico Spitz.pdf</strong>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Mapa de corte tesoura (4.2 MB)</div>
+              </div>
+            </a>
+            <a href="#" class="material-item" onclick="alert('Download da Tabela liberado na versão final!')">
+              <i class="fa-solid fa-file-excel"></i>
+              <div>
+                <strong>Calculadora de Preços.xlsx</strong>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Planilha de margem petspa (1.8 MB)</div>
+              </div>
+            </a>
+            <a href="#" class="material-item" onclick="alert('Checklist liberado!')">
+              <i class="fa-solid fa-list-check"></i>
+              <div>
+                <strong>Checklist Anti-Alopecia.pdf</strong>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Protocolo de segurança (850 KB)</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- TAB: DUVIDAS -->
+        <div class="meta-tab-pane" id="tab-duvidas">
+          <p>Tem alguma dúvida técnica sobre esta aula? Envie seu caso ou foto do pet que o Lúcio responde:</p>
+          <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 10px;">
+            <textarea placeholder="Descreva sua dúvida ou comportamento do cão na bancada..." rows="3" style="width: 100%; background: var(--navy-lighter); border: 1px solid var(--navy-border); border-radius: var(--radius-sm); padding: 10px; color: #fff; font-size: 0.85rem;"></textarea>
+            <button style="align-self: flex-start; background: var(--turquoise); color: #07151D; font-weight: 700; border: none; padding: 8px 18px; border-radius: var(--radius-sm); cursor: pointer;" onclick="alert('Dúvida enviada diretamente para a equipe pedagógica do Lúcio Rosa!')">
+              <i class="fa-solid fa-paper-plane"></i> Enviar Dúvida
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- VIP COMMUNITY BAR -->
+      <div class="vip-community-bar">
+        <div class="vip-info">
+          <div class="vip-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <div>
+            <h4 style="color: #fff; font-size: 0.95rem;">Comunidade Secreta de Groomers Lúcio Rosa</h4>
+            <p style="color: var(--text-muted); font-size: 0.78rem;">Tire dúvidas ao vivo, receba análises de fotos dos seus cortes e troque indicações de clientes.</p>
+          </div>
+        </div>
+        <a href="https://wa.me/5515998188288?text=Ol%C3%A1%20L%C3%BAcio!%20Sou%20aluno%20da%20Academia%20e%20gostaria%20de%20entrar%20no%20grupo%20VIP!" target="_blank" class="btn-vip-chat">
+          <i class="fa-brands fa-whatsapp"></i> Entrar no Grupo VIP
+        </a>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: PLAYLIST & MODULES WITH MINI PLAYERS -->
+    <aside class="sidebar-playlist">
+      <div class="playlist-header">
+        <h3>Grade Curricular <span class="brand-badge">10 MÓDULOS</span></h3>
+        <p>Aulas imersivas geradas com tecnologia IA Veo 3 &amp; Lúcio Rosa</p>
+      </div>
+
+      <div class="modules-accordion" id="modulesContainer">
+        
+        <!-- MÓDULO 00 -->
+        <div class="module-group">
+          <button class="module-toggle" onclick="toggleModule(this)">
+            <div class="mod-info">
+              <span class="mod-tag">MOD 00</span>
+              <span>Boas-Vindas &amp; A Filosofia Sem Trauma</span>
+            </div>
+            <i class="fa-solid fa-chevron-down chevron"></i>
+          </button>
+          <div class="module-lessons-list">
+            
+            <div class="lesson-item" data-id="l-0-1" data-title="A Jornada de 26 Anos de Lúcio Rosa" data-mod="Módulo 00 &bull; Boas-Vindas" data-img="images/hero-lucio.webp" data-time="08:15" onclick="selectLesson(this)">
+              <div class="miniplayer-thumb">
+                <img src="images/hero-lucio.webp" alt="Thumb" onerror="this.src='images/logo.webp'">
+                <div class="mini-play-icon"><i class="fa-solid fa-play"></i></div>
+                <span class="duration-tag">08:15</span>
+              </div>
+              <div class="lesson-item-info">
+                <div class="lesson-item-title">01. A Jornada de 26 Anos &bull; Filosofia</div>
+                <div class="lesson-item-meta">
+                  <span class="tag-veo3">Intro</span>
+                  <span><i class="fa-regular fa-clock"></i> 8 min</span>
+                </div>
+              </div>
+              <i class="fa-solid fa-circle-check lesson-check-status done" onclick="event.stopPropagation(); toggleLessonDone(this)"></i>
+            </div>
+
+            <div class="lesson-item" data-id="l-0-2" data-title="Comportamento Canino &bull; A Linguagem do Calming Signal" data-mod="Módulo 00 &bull; Boas-Vindas" data-img="images/pet1.webp" data-time="14:20" onclick="selectLesson(this)">
+              <div class="miniplayer-thumb">
+                <img src="images/pet1.webp" alt="Thumb">
+                <div class="mini-play-icon"><i class="fa-solid fa-play"></i></div>
+                <span class="duration-tag">14:20</span>
+              </div>
+              <div class="lesson-item-info">
+                <div class="lesson-item-title">02. Sinais de Calma: Zero Estresse na Mesa</div>
+                <div class="lesson-item-meta">
+                  <span class="tag-veo3">Veo 3</span>
+                  <span><i class="fa-regular fa-clock"></i> 14 min</span>
+                </div>
+              </div>
+              <i class="fa-solid fa-circle-check lesson-check-status done" onclick="event.stopPropagation(); toggleLessonDone(this)"></i>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- MÓDULO 01 -->
+        <div class="module-group">
+          <button class="module-toggle" onclick="toggleModule(this)">
+            <div class="mod-info">
+              <span class="mod-tag">MOD 01</span>
+              <span>Bancada de Alta Precisão: Tesouras &amp; Lâminas</span>
+            </div>
+            <i class="fa-solid fa-chevron-down chevron"></i>
+          </button>
+          <div class="module-lessons-list">
+
+            <div class="lesson-item" data-id="l-1-1" data-title="Anatomia e Pega das Tesouras: Reta, Curva e Tubarão" data-mod="Módulo 01 &bull; Ferramental" data-img="images/pet2.webp" data-time="11:05" onclick="selectLesson(this)">
+              <div class="miniplayer-thumb">
+                <img src="images/pet2.webp" alt="Thumb">
+                <div class="mini-play-icon"><i class="fa-solid fa-play"></i></div>
+                <span class="duration-tag">11:05</span>
+              </div>
+              <div class="lesson-item-info">
+                <div class="lesson-item-title">01. A Pega Cirúrgica da Tesoura sem Fadiga</div>
+                <div class="lesson-item-meta">
+                  <span class="tag-veo3">Veo 3</span>
+                  <span><i class="fa-regular fa-clock"></i> 11 min</span>
+                </div>
+              </div>
+              <i class="fa-solid fa-circle-check lesson-check-status done" onclick="event.stopPropagation(); toggleLessonDone(this)"></i>
+            </div>
+
+            <div class="lesson-item" data-id="l-1-2" data-title="Lâminas de Máquina: 10, 7F, 4F e Adaptadores" data-mod="Módulo 01 &bull; Ferramental" data-img="images/pet3.webp" data-time="09:40" onclick="selectLesson(this)">
+              <div class="miniplayer-thumb">
+                <img src="images/pet3.webp" alt="Thumb">
+                <div class="mini-play-icon"><i class="fa-solid fa-play"></i></div>
+                <span class="duration-tag">09:40</span>
+              </div>
+              <div class="lesson-item-info">
+                <div class="lesson-item-title">02. Temperatura de Lâmina &amp; Zero Queimadura</div>
+                <div class="lesson-item-meta">
+                  <span class="tag-veo3">Veo 3</span>
+                  <span><i class="fa-regular fa-clock"></i> 9 min</span>
+                </div>
+              </div>
+              <i class="fa-regular fa-circle lesson-check-status" onclick="event.stopPropagation(); toggleLessonDone(this)"></i>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- MÓDULO 02 -->
+        <div class="module-group">
+          <button class="module-toggle" onclick="toggleModule(this)">
+            <div class="mod-info">
+              <span class="mod-tag">MOD 02</span>
+              <span>Cosmetologia &amp; Banho SPA Pet</span>
+            </div>
+            <i class="fa-solid fa-chevron-down chevron"></i>
+          </button>
+          <div class="module-lessons-list">
+            <div class="lesson-item" data-id="l-2-1" data-title="Química dos Shampoos, Diluição e Hidratação Termoativa" data-mod="Módulo 02 &bull; Cosmetologia" data-img="images/produto-hidra.webp" data-time="16:30" onclick="selectLesson(this)">
+              <div class="miniplayer-thumb">
+                <img src="images/produto-hidra.webp" alt="Thumb" onerror="this.src='images/pet4.webp'">
+                <div class="mini-play-icon"><i class="fa-solid fa-play"></i></div>
+                <span class="duration-tag">16:30</span>
+              </div>
+              <div class="lesson-item-info">
+                <div class="lesson-item-title">01. Protocolo de Lavagem e Secagem Rápida</div>
+                <div class="lesson-item-meta">
+                  <span class="tag-veo3">SPA</span>
+                  <span><i class="fa-regular fa-clock"></i> 16 min</span>
+                </div>
+              </div>
+              <i class="fa-regular fa-circle lesson-check-status" onclick="event.stopPropagation(); toggleLessonDone(this)"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 04 (CARDING) -->
+        <div class="module-group">
+          <button class="module-toggle" onclick="toggleModule(this)">
+            <div class="mod-info">
+              <span class="mod-tag">MOD 04</span>
+              <span>Carding &amp; Remoção de Subpelo Morto</span>
+            </div>
+            <i class="fa-solid fa-chevron-down chevron"></i>
+          </button>
+          <div class="module-lessons-list">
+            <div class="lesson-item" data-id="l-4-1" data-title="A Arte do Carding Sem Rasgar a Pele" data-mod="Módulo 04 &bull; Carding" data-img="images/pet4.webp" data-time="18:10" onclick="selectLesson(this)">
+              <div class="miniplayer-thumb">
+                <img src="images/pet4.webp" alt="Thumb">
+                <div class="mini-play-icon"><i class="fa-solid fa-play"></i></div>
+                <span class="duration-tag">18:10</span>
+              </div>
+              <div class="lesson-item-info">
+                <div class="lesson-item-title">01. Técnica de Carding em Golden e Spitz</div>
+                <div class="lesson-item-meta">
+                  <span class="tag-veo3">Veo 3</span>
+                  <span><i class="fa-regular fa-clock"></i> 18 min</span>
+                </div>
+              </div>
+              <i class="fa-regular fa-circle lesson-check-status" onclick="event.stopPropagation(); toggleLessonDone(this)"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 06 (TOSA BEBE) -->
+        <div class="module-group">
+          <button class="module-toggle" onclick="toggleModule(this)">
+            <div class="mod-info">
+              <span class="mod-tag">MOD 06</span>
+              <span>Tosa Bebê 100% Tesourada (Shih-Tzu / Lhasa)</span>
+            </div>
+            <i class="fa-solid fa-chevron-down chevron"></i>
+          </button>
+          <div class="module-lessons-list">
+            <div class="lesson-item" data-id="l-6-1" data-title="Rosto Redondo Perfeito &bull; O Segredo da Cabeça de Pelúcia" data-mod="Módulo 06 &bull; Tosa Bebê" data-img="images/pet6.webp" data-time="22:15" onclick="selectLesson(this)">
+              <div class="miniplayer-thumb">
+                <img src="images/pet6.webp" alt="Thumb">
+                <div class="mini-play-icon"><i class="fa-solid fa-play"></i></div>
+                <span class="duration-tag">22:15</span>
+              </div>
+              <div class="lesson-item-info">
+                <div class="lesson-item-title">01. Patas em Coluna e Rostinho Redondo</div>
+                <div class="lesson-item-meta">
+                  <span class="tag-veo3">Veo 3</span>
+                  <span><i class="fa-regular fa-clock"></i> 22 min</span>
+                </div>
+              </div>
+              <i class="fa-regular fa-circle lesson-check-status" onclick="event.stopPropagation(); toggleLessonDone(this)"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 07 (SPITZ - DESTAQUE!) -->
+        <div class="module-group open">
+          <button class="module-toggle" onclick="toggleModule(this)">
+            <div class="mod-info">
+              <span class="mod-tag" style="background: var(--gold); color: #07151D;">MOD 07 ★</span>
+              <strong style="color: var(--turquoise);">Especialização Spitz Alemão (Pomerânia)</strong>
+            </div>
+            <i class="fa-solid fa-chevron-down chevron"></i>
+          </button>
+          <div class="module-lessons-list">
+
+            <div class="lesson-item" data-id="l-7-1" data-title="A Anatomia do Pelo Spitz: Por que a Máquina Destrói a Raça" data-mod="Módulo 07 &bull; Especialização Spitz" data-img="images/pet5.webp" data-time="15:40" onclick="selectLesson(this)">
+              <div class="miniplayer-thumb">
+                <img src="images/pet5.webp" alt="Thumb">
+                <div class="mini-play-icon"><i class="fa-solid fa-play"></i></div>
+                <span class="duration-tag">15:40</span>
+              </div>
+              <div class="lesson-item-info">
+                <div class="lesson-item-title">01. Biomecânica do Subpelo e Alopécia</div>
+                <div class="lesson-item-meta">
+                  <span class="tag-veo3">Veo 3</span>
+                  <span><i class="fa-regular fa-clock"></i> 15 min</span>
+                </div>
+              </div>
+              <i class="fa-regular fa-circle lesson-check-status" onclick="event.stopPropagation(); toggleLessonDone(this)"></i>
+            </div>
+
+            <!-- ACTIVE LESSON -->
+            <div class="lesson-item active" data-id="l-7-2" data-title="Padrão Comercial vs Padrão CBKC no Spitz Alemão" data-mod="Módulo 07 &bull; Especialização Spitz" data-img="images/pet5.webp" data-time="13:45" onclick="selectLesson(this)">
+              <div class="miniplayer-thumb">
+                <img src="images/pet5.webp" alt="Thumb">
+                <div class="mini-play-icon"><i class="fa-solid fa-play"></i></div>
+                <span class="duration-tag">13:45</span>
+              </div>
+              <div class="lesson-item-info">
+                <div class="lesson-item-title">02. Padrão Comercial vs CBKC Tesourado</div>
+                <div class="lesson-item-meta">
+                  <span class="tag-veo3" style="background: var(--gold); color: #07151D;">★ Em Aula</span>
+                  <span><i class="fa-regular fa-clock"></i> 13 min</span>
+                </div>
+              </div>
+              <i class="fa-regular fa-circle lesson-check-status" onclick="event.stopPropagation(); toggleLessonDone(this)"></i>
+            </div>
+
+            <div class="lesson-item" data-id="l-7-3" data-title="A Silhueta de Algodão: Tesoura Curva e Texturizadora" data-mod="Módulo 07 &bull; Especialização Spitz" data-img="images/lucio-trofeu.webp" data-time="19:20" onclick="selectLesson(this)">
+              <div class="miniplayer-thumb">
+                <img src="images/lucio-trofeu.webp" alt="Thumb" onerror="this.src='images/pet5.webp'">
+                <div class="mini-play-icon"><i class="fa-solid fa-play"></i></div>
+                <span class="duration-tag">19:20</span>
+              </div>
+              <div class="lesson-item-info">
+                <div class="lesson-item-title">03. Escultura Tesourada em 360 Graus</div>
+                <div class="lesson-item-meta">
+                  <span class="tag-veo3">Veo 3</span>
+                  <span><i class="fa-regular fa-clock"></i> 19 min</span>
+                </div>
+              </div>
+              <i class="fa-regular fa-circle lesson-check-status" onclick="event.stopPropagation(); toggleLessonDone(this)"></i>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- MÓDULO 08 (BUSINESS & VENDAS) -->
+        <div class="module-group">
+          <button class="module-toggle" onclick="toggleModule(this)">
+            <div class="mod-info">
+              <span class="mod-tag">MOD 08</span>
+              <span>Business Pet &amp; Venda de Pacotes R$ 280+</span>
+            </div>
+            <i class="fa-solid fa-chevron-down chevron"></i>
+          </button>
+          <div class="module-lessons-list">
+            <div class="lesson-item" data-id="l-8-1" data-title="Como Lotar a Agenda Cobrando Alto e Fidelizar com Planos Mensais" data-mod="Módulo 08 &bull; Gestão Pet" data-img="images/hero-lucio.webp" data-time="25:00" onclick="selectLesson(this)">
+              <div class="miniplayer-thumb">
+                <img src="images/hero-lucio.webp" alt="Thumb">
+                <div class="mini-play-icon"><i class="fa-solid fa-play"></i></div>
+                <span class="duration-tag">25:00</span>
+              </div>
+              <div class="lesson-item-info">
+                <div class="lesson-item-title">01. Fechamento de Pacotes Ouro / Prata</div>
+                <div class="lesson-item-meta">
+                  <span class="tag-veo3">Mentoria</span>
+                  <span><i class="fa-regular fa-clock"></i> 25 min</span>
+                </div>
+              </div>
+              <i class="fa-regular fa-circle lesson-check-status" onclick="event.stopPropagation(); toggleLessonDone(this)"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </aside>
+
+  </main>
+
+  <script>
+    let isPlaying = false;
+    let playInterval = null;
+    let currentPercent = 32;
+
+    function toggleModule(btn) {
+      const group = btn.closest('.module-group');
+      group.classList.toggle('open');
+    }
+
+    function selectLesson(element) {
+      document.querySelectorAll('.lesson-item').forEach(el => el.classList.remove('active'));
+      element.classList.add('active');
+
+      const title = element.getAttribute('data-title');
+      const mod = element.getAttribute('data-mod');
+      const img = element.getAttribute('data-img');
+      const time = element.getAttribute('data-time');
+
+      document.getElementById('currentLessonTitle').textContent = title;
+      document.getElementById('currentModBadge').innerHTML = '<i class="fa-solid fa-folder-open"></i> ' + mod;
+      
+      const backdrop = document.getElementById('playerBackdrop');
+      backdrop.src = img;
+
+      // Update timer simulation
+      document.getElementById('timeDisplay').textContent = '00:00 / ' + time;
+      currentPercent = 0;
+      document.getElementById('timelineFill').style.width = '0%';
+
+      // Reset play status
+      stopSimulatedPlay();
+      document.getElementById('playStatusNotice').innerHTML = '<i class="fa-solid fa-play" style="color: var(--turquoise);"></i> Pronto para reproduzir: ' + title;
+
+      // Check complete button state
+      const checkIcon = element.querySelector('.lesson-check-status');
+      const btnComplete = document.getElementById('btnMarkComplete');
+      if (checkIcon && checkIcon.classList.contains('done')) {
+        btnComplete.classList.add('completed');
+        btnComplete.innerHTML = '<i class="fa-solid fa-circle-check"></i> Aula Concluída';
+      } else {
+        btnComplete.classList.remove('completed');
+        btnComplete.innerHTML = '<i class="fa-regular fa-circle-check"></i> Concluir Aula';
+      }
+    }
+
+    function toggleSimulatedPlay() {
+      if (isPlaying) {
+        stopSimulatedPlay();
+      } else {
+        startSimulatedPlay();
+      }
+    }
+
+    function startSimulatedPlay() {
+      isPlaying = true;
+      document.getElementById('centerPlayIcon').className = 'fa-solid fa-pause';
+      document.getElementById('bottomPlayIcon').className = 'fa-solid fa-pause';
+      document.getElementById('playStatusNotice').innerHTML = '<i class="fa-solid fa-circle" style="color: #ef4444; font-size: 0.6rem;"></i> Reproduzindo tomada em alta definição IA Veo 3...';
+      
+      clearInterval(playInterval);
+      playInterval = setInterval(() => {
+        if (currentPercent < 100) {
+          currentPercent += 1;
+          document.getElementById('timelineFill').style.width = currentPercent + '%';
+        } else {
+          stopSimulatedPlay();
+          toggleCurrentComplete(true);
+        }
+      }, 350);
+    }
+
+    function stopSimulatedPlay() {
+      isPlaying = false;
+      clearInterval(playInterval);
+      document.getElementById('centerPlayIcon').className = 'fa-solid fa-play';
+      document.getElementById('bottomPlayIcon').className = 'fa-solid fa-play';
+      document.getElementById('playStatusNotice').innerHTML = '<i class="fa-solid fa-pause" style="color: var(--gold);"></i> Aula pausada';
+    }
+
+    function restartSimulatedPlay() {
+      currentPercent = 0;
+      document.getElementById('timelineFill').style.width = '0%';
+      startSimulatedPlay();
+    }
+
+    function seekTimeline(e) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const width = rect.width;
+      currentPercent = Math.min(100, Math.max(0, Math.round((clickX / width) * 100)));
+      document.getElementById('timelineFill').style.width = currentPercent + '%';
+    }
+
+    function toggleCurrentComplete(forceDone) {
+      const activeLesson = document.querySelector('.lesson-item.active');
+      const btnComplete = document.getElementById('btnMarkComplete');
+      if (!activeLesson) return;
+
+      const checkIcon = activeLesson.querySelector('.lesson-check-status');
+      const isDone = checkIcon.classList.contains('done');
+
+      if (forceDone || !isDone) {
+        checkIcon.className = 'fa-solid fa-circle-check lesson-check-status done';
+        btnComplete.classList.add('completed');
+        btnComplete.innerHTML = '<i class="fa-solid fa-circle-check"></i> Aula Concluída';
+      } else {
+        checkIcon.className = 'fa-regular fa-circle lesson-check-status';
+        btnComplete.classList.remove('completed');
+        btnComplete.innerHTML = '<i class="fa-regular fa-circle-check"></i> Concluir Aula';
+      }
+      recalculateOverallProgress();
+    }
+
+    function toggleLessonDone(icon) {
+      if (icon.classList.contains('done')) {
+        icon.className = 'fa-regular fa-circle lesson-check-status';
+      } else {
+        icon.className = 'fa-solid fa-circle-check lesson-check-status done';
+      }
+      
+      const parentLesson = icon.closest('.lesson-item');
+      if (parentLesson && parentLesson.classList.contains('active')) {
+        const btnComplete = document.getElementById('btnMarkComplete');
+        if (icon.classList.contains('done')) {
+          btnComplete.classList.add('completed');
+          btnComplete.innerHTML = '<i class="fa-solid fa-circle-check"></i> Aula Concluída';
+        } else {
+          btnComplete.classList.remove('completed');
+          btnComplete.innerHTML = '<i class="fa-regular fa-circle-check"></i> Concluir Aula';
+        }
+      }
+      recalculateOverallProgress();
+    }
+
+    function recalculateOverallProgress() {
+      const allLessons = document.querySelectorAll('.lesson-item');
+      const doneLessons = document.querySelectorAll('.lesson-check-status.done');
+      if (allLessons.length === 0) return;
+
+      const percent = Math.round((doneLessons.length / allLessons.length) * 100);
+      document.getElementById('topProgressBar').style.width = percent + '%';
+      document.getElementById('topProgressPercent').textContent = percent + '%';
+    }
+
+    function switchMetaTab(tabName) {
+      document.querySelectorAll('.meta-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.meta-tab-pane').forEach(pane => pane.classList.remove('active'));
+
+      event.currentTarget.classList.add('active');
+      const targetPane = document.getElementById('tab-' + tabName);
+      if (targetPane) targetPane.classList.add('active');
+    }
+
+    function toggleFullscreen() {
+      const box = document.getElementById('videoPlayerBox');
+      if (!document.fullscreenElement) {
+        box.requestFullscreen().catch(err => alert('Modo tela cheia ativado'));
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      recalculateOverallProgress();
+    });
+  </script>
+</body>
+</html>
